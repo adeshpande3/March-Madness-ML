@@ -1,0 +1,365 @@
+Team_Id,Team_Name
+1101,Abilene Chr
+1102,Air Force
+1103,Akron
+1104,Alabama
+1105,Alabama A&M
+1106,Alabama St
+1107,Albany NY
+1108,Alcorn St
+1109,Alliant Intl
+1110,American Univ
+1111,Appalachian St
+1112,Arizona
+1113,Arizona St
+1114,Ark Little Rock
+1115,Ark Pine Bluff
+1116,Arkansas
+1117,Arkansas St
+1118,Armstrong St
+1119,Army
+1120,Auburn
+1121,Augusta
+1122,Austin Peay
+1123,Ball St
+1124,Baylor
+1125,Belmont
+1126,Bethune-Cookman
+1127,Binghamton
+1128,Birmingham So
+1129,Boise St
+1130,Boston College
+1131,Boston Univ
+1132,Bowling Green
+1133,Bradley
+1134,Brooklyn
+1135,Brown
+1136,Bryant
+1137,Bucknell
+1138,Buffalo
+1139,Butler
+1140,BYU
+1141,C Michigan
+1142,Cal Poly SLO
+1143,California
+1144,Campbell
+1145,Canisius
+1146,Cent Arkansas
+1147,Centenary
+1148,Central Conn
+1149,Charleston So
+1150,Charlotte
+1151,Chattanooga
+1152,Chicago St
+1153,Cincinnati
+1154,Citadel
+1155,Clemson
+1156,Cleveland St
+1157,Coastal Car
+1158,Col Charleston
+1159,Colgate
+1160,Colorado
+1161,Colorado St
+1162,Columbia
+1163,Connecticut
+1164,Coppin St
+1165,Cornell
+1166,Creighton
+1167,CS Bakersfield
+1168,CS Fullerton
+1169,CS Northridge
+1170,CS Sacramento
+1171,Dartmouth
+1172,Davidson
+1173,Dayton
+1174,Delaware
+1175,Delaware St
+1176,Denver
+1177,DePaul
+1178,Detroit
+1179,Drake
+1180,Drexel
+1181,Duke
+1182,Duquesne
+1183,E Illinois
+1184,E Kentucky
+1185,E Michigan
+1186,E Washington
+1187,East Carolina
+1188,Edwardsville
+1189,Elon
+1190,ETSU
+1191,Evansville
+1192,F Dickinson
+1193,Fairfield
+1194,FL Atlantic
+1195,FL Gulf Coast
+1196,Florida
+1197,Florida A&M
+1198,Florida Intl
+1199,Florida St
+1200,Fordham
+1201,Fresno St
+1202,Furman
+1203,G Washington
+1204,Ga Southern
+1205,Gardner Webb
+1206,George Mason
+1207,Georgetown
+1208,Georgia
+1209,Georgia St
+1210,Georgia Tech
+1211,Gonzaga
+1212,Grambling
+1213,Grand Canyon
+1214,Hampton
+1215,Hardin-Simmons
+1216,Hartford
+1217,Harvard
+1218,Hawaii
+1219,High Point
+1220,Hofstra
+1221,Holy Cross
+1222,Houston
+1223,Houston Bap
+1224,Howard
+1225,Idaho
+1226,Idaho St
+1227,IL Chicago
+1228,Illinois
+1229,Illinois St
+1230,Incarnate Word
+1231,Indiana
+1232,Indiana St
+1233,Iona
+1234,Iowa
+1235,Iowa St
+1236,IPFW
+1237,IUPUI
+1238,Jackson St
+1239,Jacksonville
+1240,Jacksonville St
+1241,James Madison
+1242,Kansas
+1243,Kansas St
+1244,Kennesaw
+1245,Kent
+1246,Kentucky
+1247,La Salle
+1248,Lafayette
+1249,Lamar
+1250,Lehigh
+1251,Liberty
+1252,Lipscomb
+1253,Long Beach St
+1254,Long Island
+1255,Longwood
+1256,Louisiana Tech
+1257,Louisville
+1258,Loy Marymount
+1259,Loyola MD
+1260,Loyola-Chicago
+1261,LSU
+1262,MA Lowell
+1263,Maine
+1264,Manhattan
+1265,Marist
+1266,Marquette
+1267,Marshall
+1268,Maryland
+1269,Massachusetts
+1270,McNeese St
+1271,MD E Shore
+1272,Memphis
+1273,Mercer
+1274,Miami FL
+1275,Miami OH
+1276,Michigan
+1277,Michigan St
+1278,Minnesota
+1279,Mississippi
+1280,Mississippi St
+1281,Missouri
+1282,Missouri KC
+1283,Missouri St
+1284,Monmouth NJ
+1285,Montana
+1286,Montana St
+1287,Morehead St
+1288,Morgan St
+1289,Morris Brown
+1290,MS Valley St
+1291,Mt St Mary's
+1292,MTSU
+1293,Murray St
+1294,N Colorado
+1295,N Dakota St
+1296,N Illinois
+1297,N Kentucky
+1298,Navy
+1299,NC A&T
+1300,NC Central
+1301,NC State
+1302,NE Illinois
+1303,NE Omaha
+1304,Nebraska
+1305,Nevada
+1306,New Hampshire
+1307,New Mexico
+1308,New Mexico St
+1309,New Orleans
+1310,Niagara
+1311,Nicholls St
+1312,NJIT
+1313,Norfolk St
+1314,North Carolina
+1315,North Dakota
+1316,North Florida
+1317,North Texas
+1318,Northeastern
+1319,Northern Arizona
+1320,Northern Iowa
+1321,Northwestern
+1322,Northwestern LA
+1323,Notre Dame
+1324,Oakland
+1325,Ohio
+1326,Ohio St
+1327,Okla City
+1328,Oklahoma
+1329,Oklahoma St
+1330,Old Dominion
+1331,Oral Roberts
+1332,Oregon
+1333,Oregon St
+1334,Pacific
+1335,Penn
+1336,Penn St
+1337,Pepperdine
+1338,Pittsburgh
+1339,Portland
+1340,Portland St
+1341,Prairie View
+1342,Presbyterian
+1343,Princeton
+1344,Providence
+1345,Purdue
+1346,Quinnipiac
+1347,Radford
+1348,Rhode Island
+1349,Rice
+1350,Richmond
+1351,Rider
+1352,Robert Morris
+1353,Rutgers
+1354,S Carolina St
+1355,S Dakota St
+1356,S Illinois
+1357,Sacred Heart
+1358,Sam Houston St
+1359,Samford
+1360,San Diego
+1361,San Diego St
+1362,San Francisco
+1363,San Jose St
+1364,Santa Barbara
+1365,Santa Clara
+1366,Savannah St
+1367,SC Upstate
+1368,SE Louisiana
+1369,SE Missouri St
+1370,Seattle
+1371,Seton Hall
+1372,SF Austin
+1373,Siena
+1374,SMU
+1375,South Alabama
+1376,South Carolina
+1377,South Dakota
+1378,South Florida
+1379,Southern Miss
+1380,Southern Univ
+1381,Southern Utah
+1382,St Bonaventure
+1383,St Francis NY
+1384,St Francis PA
+1385,St John's
+1386,St Joseph's PA
+1387,St Louis
+1388,St Mary's CA
+1389,St Peter's
+1390,Stanford
+1391,Stetson
+1392,Stony Brook
+1393,Syracuse
+1394,TAM C. Christi
+1395,TCU
+1396,Temple
+1397,Tennessee
+1398,Tennessee St
+1399,Tennessee Tech
+1400,Texas
+1401,Texas A&M
+1402,Texas St
+1403,Texas Tech
+1404,TN Martin
+1405,Toledo
+1406,Towson
+1407,Troy
+1408,Tulane
+1409,Tulsa
+1410,UTRGV
+1411,TX Southern
+1412,UAB
+1413,UC Davis
+1414,UC Irvine
+1415,UC Riverside
+1416,UCF
+1417,UCLA
+1418,ULL
+1419,ULM
+1420,UMBC
+1421,UNC Asheville
+1422,UNC Greensboro
+1423,UNC Wilmington
+1424,UNLV
+1425,USC
+1426,UT Arlington
+1427,UT San Antonio
+1428,Utah
+1429,Utah St
+1430,Utah Valley
+1431,UTEP
+1432,Utica
+1433,VA Commonwealth
+1434,Valparaiso
+1435,Vanderbilt
+1436,Vermont
+1437,Villanova
+1438,Virginia
+1439,Virginia Tech
+1440,VMI
+1441,W Carolina
+1442,W Illinois
+1443,WKU
+1444,W Michigan
+1445,W Salem St
+1446,W Texas A&M
+1447,Wagner
+1448,Wake Forest
+1449,Washington
+1450,Washington St
+1451,Weber St
+1452,West Virginia
+1453,WI Green Bay
+1454,WI Milwaukee
+1455,Wichita St
+1456,William & Mary
+1457,Winthrop
+1458,Wisconsin
+1459,Wofford
+1460,Wright St
+1461,Wyoming
+1462,Xavier
+1463,Yale
+1464,Youngstown St

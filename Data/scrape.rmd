@@ -1,0 +1,19 @@
+
+
+```{r}
+library(XML)
+
+
+    year_str = toString(2017)
+    url <- paste("http://www.sports-reference.com/cbb/seasons/", year_str, "-school-stats.html", sep="")
+    data <- readHTMLTable(url, stringsAsFactors = FALSE)
+    df = data.frame(data[[1]])
+    
+    indices = which((df["Rk"] != "") & (df["Rk"] != "Rk"))
+    clean_df = df[indices, ]
+    clean_df["School"] = lapply(clean_df["School"], gsub, pattern = " \\*", replacement = "")$School
+    file_name = paste("~/Dropbox/ML iPython Notebooks/MarchMadness2017/MMStats/MMStats_" , year_str, ".csv", sep="")
+    write.csv(file=file_name, x=clean_df, row.names=FALSE)
+
+```
+

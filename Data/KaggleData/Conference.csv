@@ -1,0 +1,85 @@
+Year,Conference,Schls,W,L,W-L%,SRS,SOS,AP,NCAA,FF,Regular Season Champ,Tournament Champ
+2003,Southeastern Conference,12,220,145,.603,12.95,8.58,4,6,0,Kentucky (East) Mississippi St (West),Kentucky
+2003,Big 12 Conference,12,238,146,.620,12.94,8.21,4,6,2,Kansas,Oklahoma
+2003,Atlantic Coast Conference,9,170,111,.605,12.75,7.83,3,4,0,Wake Forest,Duke
+2003,Big East Conference,14,262,179,.594,11.03,7.13,4,4,1,Boston College (East) Connecticut (East) Pittsburgh (West) Syracuse (West),Pittsburgh
+2003,Big Ten Conference,11,200,146,.578,10.68,7.66,2,5,0,Wisconsin,Illinois
+2003,Pacific-12 Conference,10,170,132,.563,9.81,7.72,2,5,0,Arizona,Oregon
+2004,Atlantic Coast Conference,9,187,104,.643,16.55,10.72,6,6,2,Duke,Maryland
+2004,Southeastern Conference,12,227,138,.622,11.76,7.28,3,6,0,Kentucky (East) Mississippi St (West),Kentucky
+2004,Big 12 Conference,12,224,150,.599,10.70,6.83,3,4,1,Oklahoma St,Oklahoma St
+2004,Big East Conference,14,274,171,.616,10.18,6.61,5,6,1,Pittsburgh,Connecticut
+2004,Big Ten Conference,11,188,147,.561,8.21,6.42,2,3,0,Illinois,Wisconsin
+2004,Pacific-12 Conference,10,159,133,.545,7.09,5.93,2,3,0,Stanford,Stanford
+2005,Atlantic Coast Conference,11,221,132,.626,14.50,9.08,4,5,1,North Carolina,Duke
+2005,Big 12 Conference,12,226,144,.611,12.26,7.96,4,6,0,Kansas Oklahoma,Oklahoma St
+2005,Big East Conference,12,224,143,.610,11.42,7.21,4,6,0,Boston College Connecticut,Syracuse
+2005,Big Ten Conference,11,207,145,.588,11.35,8.26,3,5,2,Illinois,Illinois
+2005,Southeastern Conference,12,227,153,.597,11.05,6.81,3,5,0,Kentucky (East) Alabama (West) Louisiana St (West),Florida
+2005,Pacific-12 Conference,10,181,128,.586,8.81,6.72,2,4,0,Arizona,Washington
+2006,Atlantic Coast Conference,12,238,147,.618,11.53,6.40,3,4,0,Duke,Duke
+2006,Big East Conference,16,309,194,.614,11.23,7.13,6,8,0,Connecticut Villanova,Syracuse
+2006,Southeastern Conference,12,240,149,.617,11.01,6.96,3,6,2,Tennessee (East) Louisiana St (West),Florida
+2006,Pacific-12 Conference,10,181,135,.573,10.43,7.55,2,4,1,UCLA,UCLA
+2006,Big 12 Conference,12,215,146,.596,10.39,6.84,3,4,0,Kansas Texas,Kansas
+2006,Big Ten Conference,11,213,133,.616,10.32,6.66,3,6,0,Ohio St,Iowa
+2007,Atlantic Coast Conference,12,256,150,.631,14.34,8.62,2,7,0,North Carolina Virginia,North Carolina
+2007,Southeastern Conference,12,253,153,.623,12.94,7.92,2,5,1,Florida (East) Mississippi St (West),Florida
+2007,Big Ten Conference,11,226,143,.612,11.95,7.59,2,6,1,Ohio St,Ohio St
+2007,Pacific-12 Conference,10,202,131,.607,11.26,7.92,4,6,1,UCLA,Oregon
+2007,Big East Conference,16,321,202,.614,11.14,6.84,5,6,1,Georgetown,Georgetown
+2007,Big 12 Conference,12,239,153,.610,10.25,5.93,3,4,0,Kansas,Kansas
+2008,Big 12 Conference,12,253,154,.622,12.36,7.41,2,6,1,Kansas Texas,Kansas
+2008,Atlantic Coast Conference,12,248,153,.618,12.32,7.97,3,4,1,North Carolina,North Carolina
+2008,Pacific-12 Conference,10,207,133,.609,11.70,7.75,3,6,1,UCLA,UCLA
+2008,Big East Conference,16,315,217,.592,10.89,7.45,6,8,0,Georgetown,Pittsburgh
+2008,Southeastern Conference,12,244,157,.608,9.92,6.08,2,6,0,Tennessee (East) Mississippi St (West),Georgia
+2008,Big Ten Conference,11,214,156,.578,9.90,6.80,3,4,0,Wisconsin,Wisconsin
+2009,Atlantic Coast Conference,12,255,142,.642,12.49,7.82,5,7,1,North Carolina,Duke
+2009,Pacific-12 Conference,10,205,137,.599,11.90,8.06,3,6,0,Washington,Southern California
+2009,Big East Conference,16,335,214,.610,11.82,7.91,6,7,2,Louisville,Louisville
+2009,Big 12 Conference,12,260,153,.630,11.41,6.66,3,6,0,Kansas,Missouri
+2009,Big Ten Conference,11,232,143,.619,10.85,7.76,2,7,1,Michigan St,Purdue
+2009,Southeastern Conference,12,242,158,.605,8.35,4.56,1,3,0,South Carolina (East) Tennessee (East) Louisiana St (West),Mississippi St
+2010,Big 12 Conference,12,260,146,.640,13.62,8.00,4,7,0,Kansas,Kansas
+2010,Atlantic Coast Conference,12,260,146,.640,13.24,7.76,2,6,1,Duke Maryland,Duke
+2010,Big East Conference,16,327,210,.609,12.01,7.85,5,8,1,Syracuse,West Virginia
+2010,Big Ten Conference,11,218,155,.584,11.38,7.92,4,5,1,Michigan St Ohio St Purdue,Ohio St
+2010,Southeastern Conference,12,242,160,.602,10.71,6.47,3,4,0,Kentucky (East) Mississippi St (West),Kentucky
+2010,Pacific-12 Conference,10,178,146,.549,8.81,6.69,0,2,0,University of California,Washington
+2011,Big Ten Conference,11,224,146,.605,14.63,9.56,3,7,0,Ohio St,Ohio St
+2011,Big East Conference,16,331,210,.612,13.27,8.59,7,11,1,Pittsburgh,Connecticut
+2011,Big 12 Conference,12,257,149,.633,12.00,6.30,4,5,0,Kansas,Kansas
+2011,Atlantic Coast Conference,12,241,163,.597,11.23,6.82,2,4,0,North Carolina,Duke
+2011,Pacific-12 Conference,10,195,146,.572,10.07,7.19,2,4,0,Arizona,Washington
+2011,Southeastern Conference,12,237,165,.590,8.57,5.23,3,5,1,Florida (East) Alabama (West),Kentucky
+2012,Big Ten Conference,12,260,157,.624,12.77,8.18,5,6,1,Michigan Michigan St Ohio St,Michigan St
+2012,Big 12 Conference,10,209,131,.615,11.71,7.49,3,6,1,Kansas,Missouri
+2012,Big East Conference,16,334,217,.606,10.66,6.81,4,9,1,Syracuse,Louisville
+2012,Southeastern Conference,12,246,160,.606,10.09,6.24,3,4,1,Kentucky,Vanderbilt
+2012,Atlantic Coast Conference,12,232,166,.583,8.74,5.76,3,5,0,North Carolina,Florida St
+2012,Pacific-12 Conference,12,226,185,.550,6.74,4.83,0,2,0,Washington,Colorado
+2013,Big Ten Conference,12,262,159,.622,14.14,9.21,5,7,1,Indiana,Ohio St
+2013,Big East Conference,15,316,191,.623,11.81,7.29,6,8,2,Georgetown Louisville Marquette,Louisville
+2013,Atlantic Coast Conference,12,245,163,.600,10.07,6.44,2,4,0,Miami FL,Miami FL
+2013,Pacific-12 Conference,12,237,168,.585,9.88,6.70,3,5,0,UCLA,Oregon
+2013,Big 12 Conference,10,199,139,.589,9.49,6.29,3,5,0,Kansas Kansas St,Kansas
+2013,Southeastern Conference,14,263,203,.564,8.22,5.09,1,3,0,Florida,Mississippi
+2014,Big 12 Conference,10,207,133,.609,13.24,9.09,4,7,0,Kansas,Iowa St
+2014,Big Ten Conference,12,258,159,.619,13.18,8.31,4,6,1,Michigan,Michigan St
+2014,Pacific-12 Conference,12,248,160,.608,11.22,7.59,2,6,0,Arizona,UCLA
+2014,Big East Conference,10,198,136,.593,10.90,7.21,2,4,0,Villanova,Providence
+2014,Atlantic Coast Conference,15,300,210,.588,10.80,7.21,4,6,0,Virginia,Virginia
+2014,Southeastern Conference,14,281,199,.585,9.66,6.47,1,3,2,Florida,Florida
+2015,Big 12 Conference,10,209,128,.620,14.05,9.03,5,7,0,Kansas,Iowa St
+2015,Atlantic Coast Conference,15,316,200,.612,12.33,8.06,5,6,1,Virginia,Notre Dame
+2015,Big Ten Conference,14,287,191,.600,12.22,8.02,3,7,2,Wisconsin,Wisconsin
+2015,Big East Conference,10,199,136,.594,12.20,8.51,3,6,0,Villanova,Villanova
+2015,Southeastern Conference,14,276,198,.582,10.65,7.51,2,5,1,Kentucky,Kentucky
+2015,Pacific-12 Conference,12,242,166,.593,9.74,6.59,2,4,0,Arizona,Arizona
+2016,Big 12 Conference,10,213,129,.623,15.01,10.12,5,7,1,Kansas,Kansas
+2016,Atlantic Coast Conference,15,317,200,.613,13.96,9.24,5,7,2,North Carolina,North Carolina
+2016,Pacific-12 Conference,12,241,160,.601,11.85,8.52,4,7,0,Oregon,Oregon
+2016,Big East Conference,10,206,134,.606,11.63,7.92,3,5,1,Villanova,Seton Hall
+2016,Big Ten Conference,14,279,196,.587,10.93,7.12,5,7,0,Indiana,Michigan St
+2016,Southeastern Conference,14,263,204,.563,10.33,7.50,2,3,0,Kentucky Texas A&M,Kentucky
