@@ -7,10 +7,10 @@
 
 ############################## IMPORTS ##############################
 
+from __future__ import division
 import sklearn
 import pandas as pd
 import numpy as np
-from __future__ import division
 import collections
 import os.path
 from sklearn.cross_validation import train_test_split
@@ -18,10 +18,6 @@ from sklearn import svm
 from sklearn.svm import SVC
 from sklearn import linear_model
 from sklearn import tree
-from keras.models import Sequential
-from keras.layers import Convolution2D, MaxPooling2D, Convolution1D
-from keras.layers import Activation, Dropout, Flatten, Dense
-from keras.optimizers import SGD
 from sklearn.cross_validation import cross_val_score
 from keras.utils import np_utils
 from sklearn.neighbors import KNeighborsClassifier
@@ -33,18 +29,18 @@ import sys
 from sklearn.ensemble import GradientBoostingRegressor
 import math
 import csv
-%matplotlib inline
 from sklearn.ensemble import VotingClassifier
 from sklearn.metrics import classification_report
 import urllib
 from sklearn.svm import LinearSVC
-from utils import *
 
 ############################## LOAD TRAINING SET ##############################
 
 if os.path.exists("Data/PrecomputedMatrices/xTrain.npy") and os.path.exists("Data/PrecomputedMatrices/yTrain.npy"):
 	xTrain = np.load("Data/PrecomputedMatrices/xTrain.npy")
 	yTrain = np.load("Data/PrecomputedMatrices/yTrain.npy")
+	print ("Shape of xTrain:", xTrain.shape)
+	print ("Shape of yTrain:", yTrain.shape)
 else:
 	print ('We need a training set! Run dataPreprocessing.py')
 	sys.exit()
