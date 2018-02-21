@@ -31,6 +31,7 @@ import math
 import csv
 from sklearn.ensemble import VotingClassifier
 from sklearn.metrics import classification_report
+from sklearn.calibration import CalibratedClassifierCV
 import urllib
 from sklearn.svm import LinearSVC
 
@@ -51,21 +52,25 @@ sample_sub_pd = pd.read_csv('Data/KaggleData/SampleSubmissionStage1.csv')
 
 ############################## TRAIN MODEL ##############################
 
-model = linear_model.LogisticRegression()
+model1 = LinearSVC(penalty='l2', loss='squared_hinge', dual=True, tol=0.0001, C=0.1)
+model = CalibratedClassifierCV(model1) 
 
 categories=['Wins','PPG','PPGA','PowerConf','3PG', 'APG','TOP','Conference Champ','Tourney Conference Champ',
            'Seed','SOS','SRS', 'RPG', 'SPG', 'Tourney Appearances','National Championships','Location']
 accuracy=[]
+numTrials = 1
 
-for i in range(10):
+for i in range(numTrials):
     X_train, X_test, Y_train, Y_test = train_test_split(xTrain, yTrain)
     results = model.fit(X_train, Y_train)
     preds = model.predict(X_test)
 
     preds[preds < .5] = 0
     preds[preds >= .5] = 1
-    accuracy.append(np.mean(preds == Y_test))
-print "The average accuracy is", sum(accuracy)/len(accuracy)
+    localAccuracy = np.mean(preds == Y_test)
+    accuracy.append(localAccuracy)
+    print ("Finished run #" + str(i) + ". Accuracy = " + str(localAccuracy))
+print ("The average accuracy is", sum(accuracy)/len(accuracy))
 
 ############################## TEST MODEL ##############################
 
@@ -73,7 +78,11 @@ def predictGame(team_1_vector, team_2_vector, home):
     diff = [a - b for a, b in zip(team_1_vector, team_2_vector)]
     diff.append(home)
     # Depending on the model you use, you will either need to return model.predict_proba or model.predict
-    return model.predict_proba([diff])[0]
+    # predict_proba = Linear Reg, Linear SVC
+    # predict = Gradient Boosted
+
+    return model.predict_proba([diff])[0][1]
+    #return model.predict([diff])[0]
 
 ############################## CREATE KAGGLE SUBMISSION ##############################
 
@@ -85,6 +94,8 @@ def loadTeamVectors(years):
 	return listDictionaries
 
 def createPrediction():
+	if os.path.exists("result.csv"):
+		os.remove("result.csv")
 	# The years that we want to predict for
 	years = range(2014,2018)
 	listDictionaries = loadTeamVectors(years)
@@ -100,7 +111,7 @@ def createPrediction():
 		team2Vector = teamVectors[team2Id]
 		pred = predictGame(team1Vector, team2Vector, 0)
 		results[index][0] = matchupId
-		results[index][1] = pred[1]
+		results[index][1] = pred
 	results = pd.np.array(results)
 	firstRow = [[0 for x in range(2)] for x in range(1)]
 	firstRow[0][0] = 'ID'
