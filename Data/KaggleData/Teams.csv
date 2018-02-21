@@ -1,365 +1,365 @@
-Team_Id,Team_Name
-1101,Abilene Chr
-1102,Air Force
-1103,Akron
-1104,Alabama
-1105,Alabama A&M
-1106,Alabama St
-1107,Albany NY
-1108,Alcorn St
-1109,Alliant Intl
-1110,American Univ
-1111,Appalachian St
-1112,Arizona
-1113,Arizona St
-1114,Ark Little Rock
-1115,Ark Pine Bluff
-1116,Arkansas
-1117,Arkansas St
-1118,Armstrong St
-1119,Army
-1120,Auburn
-1121,Augusta
-1122,Austin Peay
-1123,Ball St
-1124,Baylor
-1125,Belmont
-1126,Bethune-Cookman
-1127,Binghamton
-1128,Birmingham So
-1129,Boise St
-1130,Boston College
-1131,Boston Univ
-1132,Bowling Green
-1133,Bradley
-1134,Brooklyn
-1135,Brown
-1136,Bryant
-1137,Bucknell
-1138,Buffalo
-1139,Butler
-1140,BYU
-1141,C Michigan
-1142,Cal Poly SLO
-1143,California
-1144,Campbell
-1145,Canisius
-1146,Cent Arkansas
-1147,Centenary
-1148,Central Conn
-1149,Charleston So
-1150,Charlotte
-1151,Chattanooga
-1152,Chicago St
-1153,Cincinnati
-1154,Citadel
-1155,Clemson
-1156,Cleveland St
-1157,Coastal Car
-1158,Col Charleston
-1159,Colgate
-1160,Colorado
-1161,Colorado St
-1162,Columbia
-1163,Connecticut
-1164,Coppin St
-1165,Cornell
-1166,Creighton
-1167,CS Bakersfield
-1168,CS Fullerton
-1169,CS Northridge
-1170,CS Sacramento
-1171,Dartmouth
-1172,Davidson
-1173,Dayton
-1174,Delaware
-1175,Delaware St
-1176,Denver
-1177,DePaul
-1178,Detroit
-1179,Drake
-1180,Drexel
-1181,Duke
-1182,Duquesne
-1183,E Illinois
-1184,E Kentucky
-1185,E Michigan
-1186,E Washington
-1187,East Carolina
-1188,Edwardsville
-1189,Elon
-1190,ETSU
-1191,Evansville
-1192,F Dickinson
-1193,Fairfield
-1194,FL Atlantic
-1195,FL Gulf Coast
-1196,Florida
-1197,Florida A&M
-1198,Florida Intl
-1199,Florida St
-1200,Fordham
-1201,Fresno St
-1202,Furman
-1203,G Washington
-1204,Ga Southern
-1205,Gardner Webb
-1206,George Mason
-1207,Georgetown
-1208,Georgia
-1209,Georgia St
-1210,Georgia Tech
-1211,Gonzaga
-1212,Grambling
-1213,Grand Canyon
-1214,Hampton
-1215,Hardin-Simmons
-1216,Hartford
-1217,Harvard
-1218,Hawaii
-1219,High Point
-1220,Hofstra
-1221,Holy Cross
-1222,Houston
-1223,Houston Bap
-1224,Howard
-1225,Idaho
-1226,Idaho St
-1227,IL Chicago
-1228,Illinois
-1229,Illinois St
-1230,Incarnate Word
-1231,Indiana
-1232,Indiana St
-1233,Iona
-1234,Iowa
-1235,Iowa St
-1236,IPFW
-1237,IUPUI
-1238,Jackson St
-1239,Jacksonville
-1240,Jacksonville St
-1241,James Madison
-1242,Kansas
-1243,Kansas St
-1244,Kennesaw
-1245,Kent
-1246,Kentucky
-1247,La Salle
-1248,Lafayette
-1249,Lamar
-1250,Lehigh
-1251,Liberty
-1252,Lipscomb
-1253,Long Beach St
-1254,Long Island
-1255,Longwood
-1256,Louisiana Tech
-1257,Louisville
-1258,Loy Marymount
-1259,Loyola MD
-1260,Loyola-Chicago
-1261,LSU
-1262,MA Lowell
-1263,Maine
-1264,Manhattan
-1265,Marist
-1266,Marquette
-1267,Marshall
-1268,Maryland
-1269,Massachusetts
-1270,McNeese St
-1271,MD E Shore
-1272,Memphis
-1273,Mercer
-1274,Miami FL
-1275,Miami OH
-1276,Michigan
-1277,Michigan St
-1278,Minnesota
-1279,Mississippi
-1280,Mississippi St
-1281,Missouri
-1282,Missouri KC
-1283,Missouri St
-1284,Monmouth NJ
-1285,Montana
-1286,Montana St
-1287,Morehead St
-1288,Morgan St
-1289,Morris Brown
-1290,MS Valley St
-1291,Mt St Mary's
-1292,MTSU
-1293,Murray St
-1294,N Colorado
-1295,N Dakota St
-1296,N Illinois
-1297,N Kentucky
-1298,Navy
-1299,NC A&T
-1300,NC Central
-1301,NC State
-1302,NE Illinois
-1303,NE Omaha
-1304,Nebraska
-1305,Nevada
-1306,New Hampshire
-1307,New Mexico
-1308,New Mexico St
-1309,New Orleans
-1310,Niagara
-1311,Nicholls St
-1312,NJIT
-1313,Norfolk St
-1314,North Carolina
-1315,North Dakota
-1316,North Florida
-1317,North Texas
-1318,Northeastern
-1319,Northern Arizona
-1320,Northern Iowa
-1321,Northwestern
-1322,Northwestern LA
-1323,Notre Dame
-1324,Oakland
-1325,Ohio
-1326,Ohio St
-1327,Okla City
-1328,Oklahoma
-1329,Oklahoma St
-1330,Old Dominion
-1331,Oral Roberts
-1332,Oregon
-1333,Oregon St
-1334,Pacific
-1335,Penn
-1336,Penn St
-1337,Pepperdine
-1338,Pittsburgh
-1339,Portland
-1340,Portland St
-1341,Prairie View
-1342,Presbyterian
-1343,Princeton
-1344,Providence
-1345,Purdue
-1346,Quinnipiac
-1347,Radford
-1348,Rhode Island
-1349,Rice
-1350,Richmond
-1351,Rider
-1352,Robert Morris
-1353,Rutgers
-1354,S Carolina St
-1355,S Dakota St
-1356,S Illinois
-1357,Sacred Heart
-1358,Sam Houston St
-1359,Samford
-1360,San Diego
-1361,San Diego St
-1362,San Francisco
-1363,San Jose St
-1364,Santa Barbara
-1365,Santa Clara
-1366,Savannah St
-1367,SC Upstate
-1368,SE Louisiana
-1369,SE Missouri St
-1370,Seattle
-1371,Seton Hall
-1372,SF Austin
-1373,Siena
-1374,SMU
-1375,South Alabama
-1376,South Carolina
-1377,South Dakota
-1378,South Florida
-1379,Southern Miss
-1380,Southern Univ
-1381,Southern Utah
-1382,St Bonaventure
-1383,St Francis NY
-1384,St Francis PA
-1385,St John's
-1386,St Joseph's PA
-1387,St Louis
-1388,St Mary's CA
-1389,St Peter's
-1390,Stanford
-1391,Stetson
-1392,Stony Brook
-1393,Syracuse
-1394,TAM C. Christi
-1395,TCU
-1396,Temple
-1397,Tennessee
-1398,Tennessee St
-1399,Tennessee Tech
-1400,Texas
-1401,Texas A&M
-1402,Texas St
-1403,Texas Tech
-1404,TN Martin
-1405,Toledo
-1406,Towson
-1407,Troy
-1408,Tulane
-1409,Tulsa
-1410,UTRGV
-1411,TX Southern
-1412,UAB
-1413,UC Davis
-1414,UC Irvine
-1415,UC Riverside
-1416,UCF
-1417,UCLA
-1418,ULL
-1419,ULM
-1420,UMBC
-1421,UNC Asheville
-1422,UNC Greensboro
-1423,UNC Wilmington
-1424,UNLV
-1425,USC
-1426,UT Arlington
-1427,UT San Antonio
-1428,Utah
-1429,Utah St
-1430,Utah Valley
-1431,UTEP
-1432,Utica
-1433,VA Commonwealth
-1434,Valparaiso
-1435,Vanderbilt
-1436,Vermont
-1437,Villanova
-1438,Virginia
-1439,Virginia Tech
-1440,VMI
-1441,W Carolina
-1442,W Illinois
-1443,WKU
-1444,W Michigan
-1445,W Salem St
-1446,W Texas A&M
-1447,Wagner
-1448,Wake Forest
-1449,Washington
-1450,Washington St
-1451,Weber St
-1452,West Virginia
-1453,WI Green Bay
-1454,WI Milwaukee
-1455,Wichita St
-1456,William & Mary
-1457,Winthrop
-1458,Wisconsin
-1459,Wofford
-1460,Wright St
-1461,Wyoming
-1462,Xavier
-1463,Yale
-1464,Youngstown St
+TeamID,TeamName,FirstD1Season,LastD1Season
+1101,Abilene Chr,2014,2018
+1102,Air Force,1985,2018
+1103,Akron,1985,2018
+1104,Alabama,1985,2018
+1105,Alabama A&M,2000,2018
+1106,Alabama St,1985,2018
+1107,Albany NY,2000,2018
+1108,Alcorn St,1985,2018
+1109,Alliant Intl,1985,1991
+1110,American Univ,1985,2018
+1111,Appalachian St,1985,2018
+1112,Arizona,1985,2018
+1113,Arizona St,1985,2018
+1114,Ark Little Rock,1985,2018
+1115,Ark Pine Bluff,1999,2018
+1116,Arkansas,1985,2018
+1117,Arkansas St,1985,2018
+1118,Armstrong St,1987,1987
+1119,Army,1985,2018
+1120,Auburn,1985,2018
+1121,Augusta,1985,1991
+1122,Austin Peay,1985,2018
+1123,Ball St,1985,2018
+1124,Baylor,1985,2018
+1125,Belmont,2000,2018
+1126,Bethune-Cookman,1985,2018
+1127,Binghamton,2002,2018
+1128,Birmingham So,2003,2006
+1129,Boise St,1985,2018
+1130,Boston College,1985,2018
+1131,Boston Univ,1985,2018
+1132,Bowling Green,1985,2018
+1133,Bradley,1985,2018
+1134,Brooklyn,1985,1992
+1135,Brown,1985,2018
+1136,Bryant,2009,2018
+1137,Bucknell,1985,2018
+1138,Buffalo,1992,2018
+1139,Butler,1985,2018
+1140,BYU,1985,2018
+1141,C Michigan,1985,2018
+1142,Cal Poly SLO,1995,2018
+1143,California,1985,2018
+1144,Campbell,1985,2018
+1145,Canisius,1985,2018
+1146,Cent Arkansas,2007,2018
+1147,Centenary,1985,2011
+1148,Central Conn,1987,2018
+1149,Charleston So,1985,2018
+1150,Charlotte,1985,2018
+1151,Chattanooga,1985,2018
+1152,Chicago St,1985,2018
+1153,Cincinnati,1985,2018
+1154,Citadel,1985,2018
+1155,Clemson,1985,2018
+1156,Cleveland St,1985,2018
+1157,Coastal Car,1987,2018
+1158,Col Charleston,1992,2018
+1159,Colgate,1985,2018
+1160,Colorado,1985,2018
+1161,Colorado St,1985,2018
+1162,Columbia,1985,2018
+1163,Connecticut,1985,2018
+1164,Coppin St,1986,2018
+1165,Cornell,1985,2018
+1166,Creighton,1985,2018
+1167,CS Bakersfield,2008,2018
+1168,CS Fullerton,1985,2018
+1169,CS Northridge,1991,2018
+1170,CS Sacramento,1992,2018
+1171,Dartmouth,1985,2018
+1172,Davidson,1985,2018
+1173,Dayton,1985,2018
+1174,Delaware,1985,2018
+1175,Delaware St,1985,2018
+1176,Denver,1999,2018
+1177,DePaul,1985,2018
+1178,Detroit,1985,2018
+1179,Drake,1985,2018
+1180,Drexel,1985,2018
+1181,Duke,1985,2018
+1182,Duquesne,1985,2018
+1183,E Illinois,1985,2018
+1184,E Kentucky,1985,2018
+1185,E Michigan,1985,2018
+1186,E Washington,1985,2018
+1187,East Carolina,1985,2018
+1188,Edwardsville,2009,2018
+1189,Elon,2000,2018
+1190,ETSU,1985,2018
+1191,Evansville,1985,2018
+1192,F Dickinson,1985,2018
+1193,Fairfield,1985,2018
+1194,FL Atlantic,1994,2018
+1195,FL Gulf Coast,2008,2018
+1196,Florida,1985,2018
+1197,Florida A&M,1985,2018
+1198,Florida Intl,1988,2018
+1199,Florida St,1985,2018
+1200,Fordham,1985,2018
+1201,Fresno St,1985,2018
+1202,Furman,1985,2018
+1203,G Washington,1985,2018
+1204,Ga Southern,1985,2018
+1205,Gardner Webb,2003,2018
+1206,George Mason,1985,2018
+1207,Georgetown,1985,2018
+1208,Georgia,1985,2018
+1209,Georgia St,1985,2018
+1210,Georgia Tech,1985,2018
+1211,Gonzaga,1985,2018
+1212,Grambling,1985,2018
+1213,Grand Canyon,2014,2018
+1214,Hampton,1996,2018
+1215,Hardin-Simmons,1985,1990
+1216,Hartford,1985,2018
+1217,Harvard,1985,2018
+1218,Hawaii,1985,2018
+1219,High Point,2000,2018
+1220,Hofstra,1985,2018
+1221,Holy Cross,1985,2018
+1222,Houston,1985,2018
+1223,Houston Bap,1985,2018
+1224,Howard,1985,2018
+1225,Idaho,1985,2018
+1226,Idaho St,1985,2018
+1227,IL Chicago,1985,2018
+1228,Illinois,1985,2018
+1229,Illinois St,1985,2018
+1230,Incarnate Word,2014,2018
+1231,Indiana,1985,2018
+1232,Indiana St,1985,2018
+1233,Iona,1985,2018
+1234,Iowa,1985,2018
+1235,Iowa St,1985,2018
+1236,IPFW,2003,2018
+1237,IUPUI,1999,2018
+1238,Jackson St,1985,2018
+1239,Jacksonville,1985,2018
+1240,Jacksonville St,1996,2018
+1241,James Madison,1985,2018
+1242,Kansas,1985,2018
+1243,Kansas St,1985,2018
+1244,Kennesaw,2006,2018
+1245,Kent,1985,2018
+1246,Kentucky,1985,2018
+1247,La Salle,1985,2018
+1248,Lafayette,1985,2018
+1249,Lamar,1985,2018
+1250,Lehigh,1985,2018
+1251,Liberty,1989,2018
+1252,Lipscomb,2003,2018
+1253,Long Beach St,1985,2018
+1254,Long Island,1985,2018
+1255,Longwood,2005,2018
+1256,Louisiana Tech,1985,2018
+1257,Louisville,1985,2018
+1258,Loy Marymount,1985,2018
+1259,Loyola MD,1985,2018
+1260,Loyola-Chicago,1985,2018
+1261,LSU,1985,2018
+1262,MA Lowell,2014,2018
+1263,Maine,1985,2018
+1264,Manhattan,1985,2018
+1265,Marist,1985,2018
+1266,Marquette,1985,2018
+1267,Marshall,1985,2018
+1268,Maryland,1985,2018
+1269,Massachusetts,1985,2018
+1270,McNeese St,1985,2018
+1271,MD E Shore,1985,2018
+1272,Memphis,1985,2018
+1273,Mercer,1985,2018
+1274,Miami FL,1986,2018
+1275,Miami OH,1985,2018
+1276,Michigan,1985,2018
+1277,Michigan St,1985,2018
+1278,Minnesota,1985,2018
+1279,Mississippi,1985,2018
+1280,Mississippi St,1985,2018
+1281,Missouri,1985,2018
+1282,Missouri KC,1990,2018
+1283,Missouri St,1985,2018
+1284,Monmouth NJ,1985,2018
+1285,Montana,1985,2018
+1286,Montana St,1985,2018
+1287,Morehead St,1985,2018
+1288,Morgan St,1985,2018
+1289,Morris Brown,2002,2003
+1290,MS Valley St,1985,2018
+1291,Mt St Mary's,1989,2018
+1292,MTSU,1985,2018
+1293,Murray St,1985,2018
+1294,N Colorado,2005,2018
+1295,N Dakota St,2006,2018
+1296,N Illinois,1985,2018
+1297,N Kentucky,2013,2018
+1298,Navy,1985,2018
+1299,NC A&T,1985,2018
+1300,NC Central,2008,2018
+1301,NC State,1985,2018
+1302,NE Illinois,1991,1998
+1303,NE Omaha,2012,2018
+1304,Nebraska,1985,2018
+1305,Nevada,1985,2018
+1306,New Hampshire,1985,2018
+1307,New Mexico,1985,2018
+1308,New Mexico St,1985,2018
+1309,New Orleans,1985,2018
+1310,Niagara,1985,2018
+1311,Nicholls St,1985,2018
+1312,NJIT,2007,2018
+1313,Norfolk St,1998,2018
+1314,North Carolina,1985,2018
+1315,North Dakota,2009,2018
+1316,North Florida,2006,2018
+1317,North Texas,1985,2018
+1318,Northeastern,1985,2018
+1319,Northern Arizona,1985,2018
+1320,Northern Iowa,1985,2018
+1321,Northwestern,1985,2018
+1322,Northwestern LA,1985,2018
+1323,Notre Dame,1985,2018
+1324,Oakland,2000,2018
+1325,Ohio,1985,2018
+1326,Ohio St,1985,2018
+1327,Okla City,1985,1985
+1328,Oklahoma,1985,2018
+1329,Oklahoma St,1985,2018
+1330,Old Dominion,1985,2018
+1331,Oral Roberts,1985,2018
+1332,Oregon,1985,2018
+1333,Oregon St,1985,2018
+1334,Pacific,1985,2018
+1335,Penn,1985,2018
+1336,Penn St,1985,2018
+1337,Pepperdine,1985,2018
+1338,Pittsburgh,1985,2018
+1339,Portland,1985,2018
+1340,Portland St,1999,2018
+1341,Prairie View,1985,2018
+1342,Presbyterian,2008,2018
+1343,Princeton,1985,2018
+1344,Providence,1985,2018
+1345,Purdue,1985,2018
+1346,Quinnipiac,1999,2018
+1347,Radford,1985,2018
+1348,Rhode Island,1985,2018
+1349,Rice,1985,2018
+1350,Richmond,1985,2018
+1351,Rider,1985,2018
+1352,Robert Morris,1985,2018
+1353,Rutgers,1985,2018
+1354,S Carolina St,1985,2018
+1355,S Dakota St,2006,2018
+1356,S Illinois,1985,2018
+1357,Sacred Heart,2000,2018
+1358,Sam Houston St,1987,2018
+1359,Samford,1985,2018
+1360,San Diego,1985,2018
+1361,San Diego St,1985,2018
+1362,San Francisco,1986,2018
+1363,San Jose St,1985,2018
+1364,Santa Barbara,1985,2018
+1365,Santa Clara,1985,2018
+1366,Savannah St,2003,2018
+1367,SC Upstate,2008,2018
+1368,SE Louisiana,1985,2018
+1369,SE Missouri St,1992,2018
+1370,Seattle,2009,2018
+1371,Seton Hall,1985,2018
+1372,SF Austin,1987,2018
+1373,Siena,1985,2018
+1374,SMU,1985,2018
+1375,South Alabama,1985,2018
+1376,South Carolina,1985,2018
+1377,South Dakota,2009,2018
+1378,South Florida,1985,2018
+1379,Southern Miss,1985,2018
+1380,Southern Univ,1985,2018
+1381,Southern Utah,1989,2018
+1382,St Bonaventure,1985,2018
+1383,St Francis NY,1985,2018
+1384,St Francis PA,1985,2018
+1385,St John's,1985,2018
+1386,St Joseph's PA,1985,2018
+1387,St Louis,1985,2018
+1388,St Mary's CA,1985,2018
+1389,St Peter's,1985,2018
+1390,Stanford,1985,2018
+1391,Stetson,1985,2018
+1392,Stony Brook,2000,2018
+1393,Syracuse,1985,2018
+1394,TAM C. Christi,2003,2018
+1395,TCU,1985,2018
+1396,Temple,1985,2018
+1397,Tennessee,1985,2018
+1398,Tennessee St,1985,2018
+1399,Tennessee Tech,1985,2018
+1400,Texas,1985,2018
+1401,Texas A&M,1985,2018
+1402,Texas St,1985,2018
+1403,Texas Tech,1985,2018
+1404,TN Martin,1993,2018
+1405,Toledo,1985,2018
+1406,Towson,1985,2018
+1407,Troy,1994,2018
+1408,Tulane,1985,2018
+1409,Tulsa,1985,2018
+1410,UTRGV,1985,2018
+1411,TX Southern,1985,2018
+1412,UAB,1985,2018
+1413,UC Davis,2005,2018
+1414,UC Irvine,1985,2018
+1415,UC Riverside,2002,2018
+1416,UCF,1985,2018
+1417,UCLA,1985,2018
+1418,ULL,1985,2018
+1419,ULM,1985,2018
+1420,UMBC,1987,2018
+1421,UNC Asheville,1987,2018
+1422,UNC Greensboro,1992,2018
+1423,UNC Wilmington,1985,2018
+1424,UNLV,1985,2018
+1425,USC,1985,2018
+1426,UT Arlington,1985,2018
+1427,UT San Antonio,1985,2018
+1428,Utah,1985,2018
+1429,Utah St,1985,2018
+1430,Utah Valley,2005,2018
+1431,UTEP,1985,2018
+1432,Utica,1985,1987
+1433,VA Commonwealth,1985,2018
+1434,Valparaiso,1985,2018
+1435,Vanderbilt,1985,2018
+1436,Vermont,1985,2018
+1437,Villanova,1985,2018
+1438,Virginia,1985,2018
+1439,Virginia Tech,1985,2018
+1440,VMI,1985,2018
+1441,W Carolina,1985,2018
+1442,W Illinois,1985,2018
+1443,WKU,1985,2018
+1444,W Michigan,1985,2018
+1445,W Salem St,2007,2010
+1446,W Texas A&M,1985,1986
+1447,Wagner,1985,2018
+1448,Wake Forest,1985,2018
+1449,Washington,1985,2018
+1450,Washington St,1985,2018
+1451,Weber St,1985,2018
+1452,West Virginia,1985,2018
+1453,WI Green Bay,1985,2018
+1454,WI Milwaukee,1991,2018
+1455,Wichita St,1985,2018
+1456,William & Mary,1985,2018
+1457,Winthrop,1987,2018
+1458,Wisconsin,1985,2018
+1459,Wofford,1996,2018
+1460,Wright St,1988,2018
+1461,Wyoming,1985,2018
+1462,Xavier,1985,2018
+1463,Yale,1985,2018
+1464,Youngstown St,1985,2018

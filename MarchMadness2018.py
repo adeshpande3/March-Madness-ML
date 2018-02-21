@@ -1,6 +1,6 @@
 # Format: 
 # 1) Imports
-# 2) Load Training Set
+# 2) Load Training Set and CSV Files
 # 3) Train Model
 # 4) Test Model
 # 5) Create Kaggle Submission
@@ -45,6 +45,10 @@ else:
 	print ('We need a training set! Run dataPreprocessing.py')
 	sys.exit()
 
+############################## LOAD CSV FILES ##############################
+
+sample_sub_pd = pd.read_csv('Data/KaggleData/SampleSubmissionStage1.csv')
+
 ############################## TRAIN MODEL ##############################
 
 model = linear_model.LogisticRegression()
@@ -69,30 +73,41 @@ def predictGame(team_1_vector, team_2_vector, home):
     diff = [a - b for a, b in zip(team_1_vector, team_2_vector)]
     diff.append(home)
     # Depending on the model you use, you will either need to return model.predict_proba or model.predict
-    return model.predict([diff]) 
+    return model.predict_proba([diff])[0]
 
 ############################## CREATE KAGGLE SUBMISSION ##############################
 
-def createPrediction():
-    results = [[0 for x in range(2)] for x in range(len(sample_sub_pd.index))]
-    for index, row in sample_sub_pd.iterrows():
-        matchup_id = row['id']
-        year = matchup_id[0:4]
-        team1_id = matchup_id[5:9]
-        team2_id = matchup_id[10:14]
-        team1_vector = getSeasonData(int(team1_id), int(year))
-        team2_vector = getSeasonData(int(team2_id), int(year))
-        pred = predictGame(team1_vector, team2_vector, 0)
-        results[index][0] = matchup_id
-        results[index][1] = pred[0]
-        #results[index][1] = pred[0][1]
-    results = pd.np.array(results)
-    firstRow = [[0 for x in range(2)] for x in range(1)]
-    firstRow[0][0] = 'id'
-    firstRow[0][1] = 'pred'
-    with open("result.csv", "wb") as f:
-        writer = csv.writer(f)
-        writer.writerows(firstRow)
-        writer.writerows(results)
+def loadTeamVectors(years):
+	listDictionaries = []
+	for year in years:
+		curVectors = np.load("Data/PrecomputedMatrices/TeamVectors/" + str(year) + "TeamVectors.npy").item()
+		listDictionaries.append(curVectors)
+	return listDictionaries
 
-# createPrediction()
+def createPrediction():
+	# The years that we want to predict for
+	years = range(2014,2018)
+	listDictionaries = loadTeamVectors(years)
+	print ("Loaded the team vectors")
+	results = [[0 for x in range(2)] for x in range(len(sample_sub_pd.index))]
+	for index, row in sample_sub_pd.iterrows():
+		matchupId = row['ID']
+		year = int(matchupId[0:4]) 
+		teamVectors = listDictionaries[year - years[0]]
+		team1Id = int(matchupId[5:9])
+		team2Id = int(matchupId[10:14])
+		team1Vector = teamVectors[team1Id] 
+		team2Vector = teamVectors[team2Id]
+		pred = predictGame(team1Vector, team2Vector, 0)
+		results[index][0] = matchupId
+		results[index][1] = pred[1]
+	results = pd.np.array(results)
+	firstRow = [[0 for x in range(2)] for x in range(1)]
+	firstRow[0][0] = 'ID'
+	firstRow[0][1] = 'Pred'
+	with open("result.csv", "wb") as f:
+		writer = csv.writer(f)
+		writer.writerows(firstRow)
+		writer.writerows(results)
+
+createPrediction()

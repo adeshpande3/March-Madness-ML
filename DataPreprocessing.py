@@ -19,38 +19,33 @@ import collections
 reg_season_compact_pd = pd.read_csv('Data/KaggleData/RegularSeasonCompactResults.csv')
 seasons_pd = pd.read_csv('Data/KaggleData/Seasons.csv')
 teams_pd = pd.read_csv('Data/KaggleData/Teams.csv')
-tourney_compact_pd = pd.read_csv('Data/KaggleData/TourneyCompactResults.csv')
+tourney_compact_pd = pd.read_csv('Data/KaggleData/NCAATourneyCompactResults.csv')
 conference_pd = pd.read_csv('Data/KaggleData/Conference.csv')
 tourney_results_pd = pd.read_csv('Data/KaggleData/TourneyResults.csv')
 sample_sub_pd = pd.read_csv('Data/KaggleData/sample_submission.csv')
-tourney_seeds_pd = pd.read_csv('Data/KaggleData/TourneySeeds.csv')
+tourney_seeds_pd = pd.read_csv('Data/KaggleData/NCAATourneySeeds.csv')
+team_conferences_pd = pd.read_csv('Data/KaggleData/TeamConferences.csv')
 
 ############################## DATA STRUCTURES ##############################
 
-teamList = teams_pd['Team_Name'].tolist()
+teamList = teams_pd['TeamName'].tolist()
 NCAAChampionsList = tourney_results_pd['NCAA Champion'].tolist()
-listACCteams = ['North Carolina','Virginia','Florida St','Louisville','Notre Dame','Syracuse','Duke','Virginia Tech','Georgia Tech','Miami','Wake Forest','Clemson','NC State','Boston College','Pittsburgh']
-listPac12teams = ['Arizona','Oregon','UCLA','California','USC','Utah','Washington St','Stanford','Arizona St','Colorado','Washington','Oregon St']
-listSECteams = ['Kentucky','South Carolina','Florida','Arkansas','Alabama','Tennessee','Mississippi St','Georgia','Ole Miss','Vanderbilt','Auburn','Texas A&M','LSU','Missouri']
-listBig10teams = ['Maryland','Wisconsin','Purdue','Northwestern','Michigan St','Indiana','Iowa','Michigan','Penn St','Nebraska','Minnesota','Illinois','Ohio St','Rutgers']
-listBig12teams = ['Kansas','Baylor','West Virginia','Iowa St','TCU','Kansas St','Texas Tech','Oklahoma St','Texas','Oklahoma']
-listBigEastteams = ['Butler','Creighton','DePaul','Georgetown','Marquette','Providence','Seton Hall','St John\'s','Villanova','Xavier']
 
 ############################## HELPER FUNCTIONS ##############################
 
 def checkPower6Conference(team_id):
-    teamName = teams_pd.values[team_id-1101][1]
-    if (teamName in listACCteams or teamName in listBig10teams or teamName in listBig12teams
-       or teamName in listSECteams or teamName in listPac12teams or teamName in listBigEastteams):
-        return 1
-    else:
+    team_pd = team_conferences_pd[(team_conferences_pd['Season'] == 2018) & (team_conferences_pd['TeamID'] == team_id)]
+    # Can't find the team
+    if (len(team_pd) == 0):
         return 0
+    confName = team_pd.iloc[0]['ConfAbbrev']
+    return int(confName == 'sec' or confName == 'acc'or confName == 'big_ten' or confName == 'big_twelve' or confName == 'big_east' or confName == 'pac_twelve')
 
 def getTeamID(name):
-    return teams_pd[teams_pd['Team_Name'] == name].values[0][0]
+    return teams_pd[teams_pd['TeamName'] == name].values[0][0]
 
 def getTeamName(team_id):
-    return teams_pd[teams_pd['Team_Id'] == team_id].values[0][1]
+    return teams_pd[teams_pd['TeamID'] == team_id].values[0][1]
 
 def getNumChampionships(team_id):
     name = getTeamName(team_id)
@@ -108,7 +103,7 @@ def checkConferenceTourneyChamp(team_id, year):
         return 0
 
 def getTourneyAppearances(team_id):
-    return len(tourney_seeds_pd[tourney_seeds_pd['Team'] == team_id].index)
+    return len(tourney_seeds_pd[tourney_seeds_pd['TeamID'] == team_id].index)
 
 def handleDifferentCSV(df):
     # The stats CSV is a lit different in terms of naming so below is just some data cleaning
@@ -248,16 +243,16 @@ def getSeasonData(team_id, year):
     # The data frame below holds stats for every single game in the given year
     year_data_pd = reg_season_compact_pd[reg_season_compact_pd['Season'] == year]
     # Finding number of points per game
-    gamesWon = year_data_pd[year_data_pd.Wteam == team_id] 
-    totalPointsScored = gamesWon['Wscore'].sum()
-    gamesLost = year_data_pd[year_data_pd.Lteam == team_id] 
+    gamesWon = year_data_pd[year_data_pd.WTeamID == team_id] 
+    totalPointsScored = gamesWon['WScore'].sum()
+    gamesLost = year_data_pd[year_data_pd.LTeamID == team_id] 
     totalGames = gamesWon.append(gamesLost)
     numGames = len(totalGames.index)
-    totalPointsScored += gamesLost['Lscore'].sum()
+    totalPointsScored += gamesLost['LScore'].sum()
     
     # Finding number of points per game allowed
-    totalPointsAllowed = gamesWon['Lscore'].sum()
-    totalPointsAllowed += gamesLost['Wscore'].sum()
+    totalPointsAllowed = gamesWon['LScore'].sum()
+    totalPointsAllowed += gamesLost['WScore'].sum()
     
     stats_SOS_pd = pd.read_csv('Data/RegSeasonStats/MMStats_'+str(year)+'.csv')
     stats_SOS_pd = handleDifferentCSV(stats_SOS_pd)
@@ -294,7 +289,7 @@ def getSeasonData(team_id, year):
     
     #Finding tournament seed for that year
     tourneyYear = tourney_seeds_pd[tourney_seeds_pd['Season'] == year]
-    seed = tourneyYear[tourneyYear['Team'] == team_id]
+    seed = tourneyYear[tourneyYear['TeamID'] == team_id]
     if (len(seed.index) != 0):
         seed = seed.values[0][1]
         tournamentSeed = int(seed[1:3])
@@ -329,12 +324,12 @@ def getSeasonData(team_id, year):
 def createSeasonDict(year):
     seasonDictionary = collections.defaultdict(list)
     for team in teamList:
-        team_id = teams_pd[teams_pd['Team_Name'] == team].values[0][0]
+        team_id = teams_pd[teams_pd['TeamName'] == team].values[0][0]
         team_vector = getSeasonData(team_id, year)
         seasonDictionary[team_id] = team_vector
     return seasonDictionary
 
-def createTrainingSet(years):
+def createTrainingSet(years, saveYears):
     totalNumGames = 0
     for year in years:
         season = reg_season_compact_pd[reg_season_compact_pd['Season'] == year]
@@ -355,12 +350,12 @@ def createTrainingSet(years):
         yTrainSeason = np.zeros(( numGamesInSeason ))
         counter = 0
         for index, row in season.iterrows():
-            w_team = row['Wteam']
+            w_team = row['WTeamID']
             w_vector = team_vectors[w_team]
-            l_team = row['Lteam']
+            l_team = row['LTeamID']
             l_vector = team_vectors[l_team]
             diff = [a - b for a, b in zip(w_vector, l_vector)]
-            home = getHomeStat(row['Wloc'])
+            home = getHomeStat(row['WLoc'])
             if (counter % 2 == 0):
                 diff.append(home) 
                 xTrainSeason[counter] = diff
@@ -371,9 +366,9 @@ def createTrainingSet(years):
                 yTrainSeason[counter] = 0
             counter += 1
         for index, row in tourney.iterrows():
-            w_team = row['Wteam']
+            w_team = row['WTeamID']
             w_vector = team_vectors[w_team]
-            l_team = row['Lteam']
+            l_team = row['LTeamID']
             l_vector = team_vectors[l_team]
             diff = [a - b for a, b in zip(w_vector, l_vector)]
             home = 0 #All tournament games are neutral
@@ -390,21 +385,28 @@ def createTrainingSet(years):
         yTrain[indexCounter:numGamesInSeason+indexCounter] = yTrainSeason
         indexCounter += numGamesInSeason
         print ('Finished year:', year)
+        if (year in saveYears):
+            np.save('Data/PrecomputedMatrices/TeamVectors/' + str(year) + 'TeamVectors', team_vectors)
     return xTrain, yTrain
+
+def createAndSave(years, saveYears):
+    xTrain, yTrain = createTrainingSet(years, saveYears)
+    np.save('Data/PrecomputedMatrices/xTrain', xTrain)
+    np.save('Data/PrecomputedMatrices/yTrain', yTrain)      
 
 ############################## CREATE TRAINING SET ##############################
 
 years = range(1993,2018)
+# Saves the team vectors for the following years
+saveYears = range(2014,2018)
 if os.path.exists("Data/PrecomputedMatrices/xTrain.npy") and os.path.exists("Data/PrecomputedMatrices/yTrain.npy"):
     print ('There is already a precomputed xTrain and yTrain.')
-    response = raw_input('Do you want to remove these files and create a new training set? (y/n)')
+    response = raw_input('Do you want to remove these files and create a new training set? (y/n) ')
     if (response == 'y'):
-        xTrain, yTrain = createTrainingSet(years)
-        np.save('Data/PrecomputedMatrices/xTrain', xTrain)
-        np.save('Data/PrecomputedMatrices/yTrain', yTrain)
+        os.remove("Data/PrecomputedMatrices/xTrain.npy")
+        os.remove("Data/PrecomputedMatrices/yTrain.npy")
+        createAndSave(years, saveYears)
     else: 
         print ('Okay, going to exit now.')
 else:
-    xTrain, yTrain = createTrainingSet(years)
-    np.save('Data/PrecomputedMatrices/xTrain', xTrain)
-    np.save('Data/PrecomputedMatrices/yTrain', yTrain)
+    createAndSave(years, saveYears)
