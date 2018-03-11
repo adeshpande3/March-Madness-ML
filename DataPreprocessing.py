@@ -21,7 +21,6 @@ teams_pd = pd.read_csv('Data/KaggleData/Teams.csv')
 tourney_compact_pd = pd.read_csv('Data/KaggleData/NCAATourneyCompactResults.csv')
 conference_pd = pd.read_csv('Data/KaggleData/Conference.csv')
 tourney_results_pd = pd.read_csv('Data/KaggleData/TourneyResults.csv')
-sample_sub_pd = pd.read_csv('Data/KaggleData/sample_submission.csv')
 tourney_seeds_pd = pd.read_csv('Data/KaggleData/NCAATourneySeeds.csv')
 team_conferences_pd = pd.read_csv('Data/KaggleData/TeamConferences.csv')
 
