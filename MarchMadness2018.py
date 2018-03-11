@@ -34,6 +34,9 @@ from sklearn.metrics import classification_report
 from sklearn.calibration import CalibratedClassifierCV
 import urllib
 from sklearn.svm import LinearSVC
+import xgboost as xgb
+from sklearn.model_selection import GridSearchCV
+from datetime import datetime
 
 ############################## LOAD TRAINING SET ##############################
 
@@ -52,8 +55,7 @@ sample_sub_pd = pd.read_csv('Data/KaggleData/SampleSubmissionStage1.csv')
 
 ############################## TRAIN MODEL ##############################
 
-model1 = LinearSVC(penalty='l2', loss='squared_hinge', dual=True, tol=0.0001, C=0.1)
-model = CalibratedClassifierCV(model1) 
+model = KNeighborsClassifier(n_neighbors = 9)
 
 categories=['Wins','PPG','PPGA','PowerConf','3PG', 'APG','TOP','Conference Champ','Tourney Conference Champ',
            'Seed','SOS','SRS', 'RPG', 'SPG', 'Tourney Appearances','National Championships','Location']
@@ -62,6 +64,7 @@ numTrials = 1
 
 for i in range(numTrials):
     X_train, X_test, Y_train, Y_test = train_test_split(xTrain, yTrain)
+    startTime = datetime.now() # For some timing stuff
     results = model.fit(X_train, Y_train)
     preds = model.predict(X_test)
 
@@ -70,19 +73,21 @@ for i in range(numTrials):
     localAccuracy = np.mean(preds == Y_test)
     accuracy.append(localAccuracy)
     print ("Finished run #" + str(i) + ". Accuracy = " + str(localAccuracy))
-print ("The average accuracy is", sum(accuracy)/len(accuracy))
+    print ("Time taken: " + str(datetime.now() - startTime))
+if numTrials != 0:
+	print ("The average accuracy is", sum(accuracy)/len(accuracy))
 
 ############################## TEST MODEL ##############################
 
-def predictGame(team_1_vector, team_2_vector, home):
+def predictGame(team_1_vector, team_2_vector, home, modelUsed):
     diff = [a - b for a, b in zip(team_1_vector, team_2_vector)]
     diff.append(home)
     # Depending on the model you use, you will either need to return model.predict_proba or model.predict
     # predict_proba = Linear Reg, Linear SVC
-    # predict = Gradient Boosted
+    # predict = Gradient Boosted, Ridge, HuberRegressor
 
-    return model.predict_proba([diff])[0][1]
-    #return model.predict([diff])[0]
+    #return modelUsed.predict_proba([diff])[0][1]
+    return modelUsed.predict([diff])[0]
 
 ############################## CREATE KAGGLE SUBMISSION ##############################
 
@@ -101,6 +106,11 @@ def createPrediction():
 	listDictionaries = loadTeamVectors(years)
 	print ("Loaded the team vectors")
 	results = [[0 for x in range(2)] for x in range(len(sample_sub_pd.index))]
+
+	X_train, X_test, Y_train, Y_test = train_test_split(xTrain, yTrain)
+	firstModel = svm.SVC()
+	firstModel.fit(X_train, Y_train)
+
 	for index, row in sample_sub_pd.iterrows():
 		matchupId = row['ID']
 		year = int(matchupId[0:4]) 
@@ -109,7 +119,8 @@ def createPrediction():
 		team2Id = int(matchupId[10:14])
 		team1Vector = teamVectors[team1Id] 
 		team2Vector = teamVectors[team2Id]
-		pred = predictGame(team1Vector, team2Vector, 0)
+		pred1 = predictGame(team1Vector, team2Vector, 0, firstModel)
+		pred = pred1.clip(0.,1.)
 		results[index][0] = matchupId
 		results[index][1] = pred
 	results = pd.np.array(results)
@@ -121,4 +132,4 @@ def createPrediction():
 		writer.writerows(firstRow)
 		writer.writerows(results)
 
-createPrediction()
+#createPrediction()

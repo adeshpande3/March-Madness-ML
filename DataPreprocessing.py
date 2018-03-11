@@ -17,7 +17,6 @@ import collections
 ############################## LOAD CSVs ##############################
 
 reg_season_compact_pd = pd.read_csv('Data/KaggleData/RegularSeasonCompactResults.csv')
-seasons_pd = pd.read_csv('Data/KaggleData/Seasons.csv')
 teams_pd = pd.read_csv('Data/KaggleData/Teams.csv')
 tourney_compact_pd = pd.read_csv('Data/KaggleData/NCAATourneyCompactResults.csv')
 conference_pd = pd.read_csv('Data/KaggleData/Conference.csv')
