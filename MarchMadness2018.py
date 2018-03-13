@@ -37,6 +37,7 @@ from sklearn.svm import LinearSVC
 import xgboost as xgb
 from sklearn.model_selection import GridSearchCV
 from datetime import datetime
+import random
 
 ############################## LOAD TRAINING SET ##############################
 
@@ -52,15 +53,17 @@ else:
 ############################## LOAD CSV FILES ##############################
 
 sample_sub_pd = pd.read_csv('Data/KaggleData/SampleSubmissionStage1.csv')
+sample_sub_pd2 = pd.read_csv('Data/KaggleData/SampleSubmissionStage2.csv')
+teams_pd = pd.read_csv('Data/KaggleData/Teams.csv')
 
 ############################## TRAIN MODEL ##############################
 
-model = KNeighborsClassifier(n_neighbors = 9)
+model = GradientBoostingRegressor(n_estimators=100, max_depth=5)
 
 categories=['Wins','PPG','PPGA','PowerConf','3PG', 'APG','TOP','Conference Champ','Tourney Conference Champ',
            'Seed','SOS','SRS', 'RPG', 'SPG', 'Tourney Appearances','National Championships','Location']
 accuracy=[]
-numTrials = 1
+numTrials = 0
 
 for i in range(numTrials):
     X_train, X_test, Y_train, Y_test = train_test_split(xTrain, yTrain)
@@ -98,20 +101,25 @@ def loadTeamVectors(years):
 		listDictionaries.append(curVectors)
 	return listDictionaries
 
-def createPrediction():
+def createPrediction(stage2 = False):
+	if stage2:
+		years = [2018]
+		localPd = sample_sub_pd2
+	else:
+		# The years that we want to predict for
+		years = range(2014,2018)
+		localPd = sample_sub_pd
+
 	if os.path.exists("result.csv"):
 		os.remove("result.csv")
-	# The years that we want to predict for
-	years = range(2014,2018)
 	listDictionaries = loadTeamVectors(years)
 	print ("Loaded the team vectors")
-	results = [[0 for x in range(2)] for x in range(len(sample_sub_pd.index))]
+	results = [[0 for x in range(2)] for x in range(len(localPd.index))]
 
-	X_train, X_test, Y_train, Y_test = train_test_split(xTrain, yTrain)
-	firstModel = svm.SVC()
-	firstModel.fit(X_train, Y_train)
+	predictionModel = GradientBoostingRegressor(n_estimators=100, max_depth=5)
+	predictionModel.fit(xTrain, yTrain)
 
-	for index, row in sample_sub_pd.iterrows():
+	for index, row in localPd.iterrows():
 		matchupId = row['ID']
 		year = int(matchupId[0:4]) 
 		teamVectors = listDictionaries[year - years[0]]
@@ -119,7 +127,7 @@ def createPrediction():
 		team2Id = int(matchupId[10:14])
 		team1Vector = teamVectors[team1Id] 
 		team2Vector = teamVectors[team2Id]
-		pred1 = predictGame(team1Vector, team2Vector, 0, firstModel)
+		pred1 = predictGame(team1Vector, team2Vector, 0, predictionModel)
 		pred = pred1.clip(0.,1.)
 		results[index][0] = matchupId
 		results[index][1] = pred
@@ -133,3 +141,46 @@ def createPrediction():
 		writer.writerows(results)
 
 #createPrediction()
+#createPrediction(stage2=True)
+
+############################## PREDICTING 2018 BRACKET ##############################
+
+def trainModel():
+	model = GradientBoostingRegressor(n_estimators=100, max_depth=5)
+	model.fit(xTrain, yTrain)
+	return model
+
+def randomWinner(team1, team2, modelUsed):
+	year = [2018]
+	teamVectors = loadTeamVectors(year)[0]
+	team1Vector = teamVectors[int(teams_pd[teams_pd['TeamName'] == team1].values[0][0])]
+	team2Vector = teamVectors[int(teams_pd[teams_pd['TeamName'] == team2].values[0][0])]
+	prediction = predictGame(team1Vector, team2Vector, 0, modelUsed)
+	for i in range(10):
+		if (prediction > random.random()):
+			print ("{0} Wins".format(team1))
+		else:
+			print ("{0} Wins".format(team2))
+
+
+def findWinner(team1, team2, modelUsed):
+	year = [2018]
+	teamVectors = loadTeamVectors(year)[0]
+	team1Vector = teamVectors[int(teams_pd[teams_pd['TeamName'] == team1].values[0][0])]
+	team2Vector = teamVectors[int(teams_pd[teams_pd['TeamName'] == team2].values[0][0])]
+	prediction = predictGame(team1Vector, team2Vector, 0, modelUsed)
+	if (prediction < 0.5):
+		print ("Probability that {0} wins: {1}".format(team2, 1 - prediction))
+	else:
+		print ("Probability that {0} wins: {1}".format(team1, prediction))
+
+trainedModel = trainModel()
+# First round games in the South for example
+findWinner('Virginia', 'UMBC', trainedModel)
+findWinner('Creighton', 'Kansas St', trainedModel)
+findWinner('Kentucky', 'Davidson', trainedModel)
+findWinner('Arizona', 'Buffalo', trainedModel)
+findWinner('Miami FL', 'Loyola-Chicago', trainedModel)
+findWinner('Tennessee', 'Wright St', trainedModel)
+findWinner('Nevada', 'Texas', trainedModel)
+findWinner('Cincinnati', 'Georgia St', trainedModel)

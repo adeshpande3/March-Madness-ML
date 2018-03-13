@@ -394,9 +394,9 @@ def createAndSave(years, saveYears):
 
 ############################## CREATE TRAINING SET ##############################
 
-years = range(1993,2018)
+years = range(1993,2019)
 # Saves the team vectors for the following years
-saveYears = range(2014,2018)
+saveYears = range(2014,2019)
 if os.path.exists("Data/PrecomputedMatrices/xTrain.npy") and os.path.exists("Data/PrecomputedMatrices/yTrain.npy"):
     print ('There is already a precomputed xTrain and yTrain.')
     response = raw_input('Do you want to remove these files and create a new training set? (y/n) ')
