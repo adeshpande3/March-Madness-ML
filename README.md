@@ -33,11 +33,11 @@ In order to run these scripts, you'll need the following libraries.
 ## Getting Started
 1. Download and unzip [this entire repository from GitHub](https://github.com/adeshpande3/March-Madness-2018), either interactively, or by entering the following in your Terminal.
     ```bash
-    git clone https://github.com/adeshpande3/March-Madness-2018.git
+    git clone https://github.com/adeshpande3/March-Madness-ML.git
     ```
 2. Navigate into the top directory of the repo on your machine
     ```bash
-    cd March-Madness-2018
+    cd March-Madness-ML
     ```
 3. First create your xTrain and yTrain matrices by running 
     ```bash
@@ -46,5 +46,5 @@ In order to run these scripts, you'll need the following libraries.
    This may take a while (Still trying to figure out ways to make this faster).
 4. Then run your machine learning model  
     ```bash
-    python MarchMadness2018.py
+    python MarchMadness.py
     ```
