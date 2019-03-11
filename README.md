@@ -8,7 +8,7 @@ In this project, I hope to use machine learning to create a model that can predi
 
 * Data: The Data folder contains different CSVs that show team stats, regular season game results, etc. It will contain data that I've scraped, data from Kaggle, and a folder that contains precomputed xTrain and yTrain matrices so that we don't have to keep recomputing the training set. 
 * DataPreprocessing.py: Script where we create our training matrices. 
-* MarchMadness2018.py: Script where we apply machine learning models to the training set. We can also create our Kaggle submissions here. 
+* MarchMadness.py: Script where we apply machine learning models to the training set. We can also create our Kaggle submissions here. 
 
 ## Requirements and Installation
 In order to run these scripts, you'll need the following libraries. 
