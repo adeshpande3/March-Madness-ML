@@ -1,6 +1,6 @@
-# March-Madness-2018
+# March-Madness-ML
 
-Applying machine learning to March Madness (Round 2). Check out my first repo [here](https://github.com/adeshpande3/March-Madness-2017) and my associated [blog post](https://adeshpande3.github.io/adeshpande3.github.io/Applying-Machine-Learning-to-March-Madness).
+Applying machine learning to March Madness. Check out my first repo [here](https://github.com/adeshpande3/March-Madness-2017) and my associated [blog post](https://adeshpande3.github.io/adeshpande3.github.io/Applying-Machine-Learning-to-March-Madness). I've tried to make this repository extensible enough so that I can use it from year to year. 
 
 ## Overview
 
@@ -16,6 +16,13 @@ In order to run these scripts, you'll need the following libraries.
 * [NumPy](https://docs.scipy.org/doc/numpy/user/install.html)
 * [Pandas](https://pandas.pydata.org/pandas-docs/stable/install.html)
 * [Sklearn](http://scikit-learn.org/stable/install.html)
+
+## What To Do Every March
+* Download data files from Kaggle, who will normally have a competition going. They will provide CSV files that show the results from games since 1985, information on conferences, tourney seed history, etc. It's important to download this data every year because Kaggle will add data from the most recently completed season and so you'll have a bit more training data. **Download the files, and replace the ones in [here](https://github.com/adeshpande3/March-Madness-ML/tree/master/Data/KaggleData) with the new versions**
+* We also want to get the advanced rating statistics from Basketball Reference. Basically, go to https://www.sports-reference.com/cbb/seasons/2019-ratings.html (and replace 2019 with whatever year you're looking at), choose to get the table as a CSV (available in one of the dropdowns), copy that over to a new text doc in Sublime (or any text editor), save it as a CSV, and then upload it to [this folder](https://github.com/adeshpande3/March-Madness-ML/tree/master/Data/RatingStats).
+* We also want to get the regular season statistics from Basketball Reference. Basically, go to https://www.sports-reference.com/cbb/seasons/2019-school-stats.html (and replace 2019 with whatever year you're looking at), choose to get the table as a CSV (available in one of the dropdowns), copy that over to a new text doc in Sublime (or any text editor), save it as a CSV, and then upload it to [this folder](https://github.com/adeshpande3/March-Madness-ML/tree/master/Data/RegSeasonStats).
+* Run DataPreprocessing.py in order to get the most up to date training matrices.
+* Run MarchMadness.py. 
 
 ## What You Can Do
 * Try to modify MarchMadness2018.py to include more ML models
