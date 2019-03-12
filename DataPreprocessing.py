@@ -238,20 +238,6 @@ def normalizeInput2(X):
 ############################## MAIN PREPROCESSING FUNCTIONS ##############################
 
 def getSeasonData(team_id, year):
-    # The data frame below holds stats for every single game in the given year
-    year_data_pd = reg_season_compact_pd[reg_season_compact_pd['Season'] == year]
-    # Finding number of points per game
-    gamesWon = year_data_pd[year_data_pd.WTeamID == team_id] 
-    totalPointsScored = gamesWon['WScore'].sum()
-    gamesLost = year_data_pd[year_data_pd.LTeamID == team_id] 
-    totalGames = gamesWon.append(gamesLost)
-    numGames = len(totalGames.index)
-    totalPointsScored += gamesLost['LScore'].sum()
-    
-    # Finding number of points per game allowed
-    totalPointsAllowed = gamesWon['LScore'].sum()
-    totalPointsAllowed += gamesLost['WScore'].sum()
-    
     stats_SOS_pd = pd.read_csv('Data/RegSeasonStats/MMStats_'+str(year)+'.csv')
     stats_SOS_pd = handleDifferentCSV(stats_SOS_pd)
     ratings_pd = pd.read_csv('Data/RatingStats/RatingStats_'+str(year)+'.csv')
@@ -261,29 +247,20 @@ def getSeasonData(team_id, year):
     team = stats_SOS_pd[stats_SOS_pd['School'] == name]
     team_rating = ratings_pd[ratings_pd['School'] == name]
     if (len(team.index) == 0 or len(team_rating.index) == 0): #Can't find the team
-        total3sMade = 0
-        totalTurnovers = 0
-        totalAssists = 0
-        sos = 0
-        totalRebounds = 0
-        srs = 0
-        totalSteals = 0
-    else:
-        total3sMade = team['X3P'].values[0]
-        totalTurnovers = team['TOV'].values[0]
-        if (math.isnan(totalTurnovers)):
-            totalTurnovers = 0
-        totalAssists = team['AST'].values[0]
-        if (math.isnan(totalAssists)):
-            totalAssists = 0
-        sos = team['SOS'].values[0]
-        srs = team['SRS'].values[0]
-        totalRebounds = team['TRB'].values[0]
-        if (math.isnan(totalRebounds)):
-            totalRebounds = 0
-        totalSteals = team['STL'].values[0]
-        if (math.isnan(totalSteals)):
-            totalSteals = 0
+        return [0 for x in range(16)]
+
+    gamesWon = team['W'].values[0]
+    gamesLost = team['L'].values[0]
+    total3sMade = team['X3P'].values[0]
+    totalTurnovers = 0 if math.isnan(team['TOV'].values[0]) else team['TOV'].values[0]
+    totalAssists = 0 if math.isnan(team['AST'].values[0]) else team['AST'].values[0]
+    totalRebounds = 0 if math.isnan(team['TRB'].values[0]) else team['TRB'].values[0]
+    totalSteals = 0 if math.isnan(team['STL'].values[0]) else team['STL'].values[0]
+    sos = team['SOS'].values[0]
+    srs = team['SRS'].values[0]
+    numWins = team['W'].values[0]
+    totalPointsAllowed = team['Opp.'].values[0]
+    totalPointsScored = team['Tm.'].values[0]
     
     #Finding tournament seed for that year
     tourneyYear = tourney_seeds_pd[tourney_seeds_pd['Season'] == year]
@@ -294,27 +271,15 @@ def getSeasonData(team_id, year):
     else:
         tournamentSeed = 25 #Not sure how to represent if a team didn't make the tourney
     
-    # Finding number of wins and losses
-    numWins = len(gamesWon.index)
-    # There are some teams who may have dropped to Division 2, so they won't have games 
-    # a certain year. In this case, we don't want to divide by 0, so we'll just set the
-    # averages to 0 instead
-    if numGames == 0:
-        avgPointsScored = 0
-        avgPointsAllowed = 0
-        avg3sMade = 0
-        avgTurnovers = 0
-        avgAssists = 0
-        avgRebounds = 0
-        avgSteals = 0
-    else:
-        avgPointsScored = totalPointsScored/numGames
-        avgPointsAllowed = totalPointsAllowed/numGames
-        avg3sMade = total3sMade/numGames
-        avgTurnovers = totalTurnovers/numGames
-        avgAssists = totalAssists/numGames
-        avgRebounds = totalRebounds/numGames
-        avgSteals = totalSteals/numGames
+    numGames = team['G'].values[0]
+
+    avgPointsScored = totalPointsScored/numGames
+    avgPointsAllowed = totalPointsAllowed/numGames
+    avg3sMade = total3sMade/numGames
+    avgTurnovers = totalTurnovers/numGames
+    avgAssists = totalAssists/numGames
+    avgRebounds = totalRebounds/numGames
+    avgSteals = totalSteals/numGames
     return [numWins, avgPointsScored, avgPointsAllowed, checkPower6Conference(team_id), avg3sMade, avgAssists, avgTurnovers,
            checkConferenceChamp(team_id, year), checkConferenceTourneyChamp(team_id, year), tournamentSeed,
             sos, srs, avgRebounds, avgSteals, getTourneyAppearances(team_id), getNumChampionships(team_id)]
@@ -389,14 +354,18 @@ def createTrainingSet(years, saveYears):
 
 def createAndSave(years, saveYears):
     xTrain, yTrain = createTrainingSet(years, saveYears)
+    print ("Shape of xTrain:", xTrain.shape)
+    print ("Shape of yTrain:", yTrain.shape)
     np.save('Data/PrecomputedMatrices/xTrain', xTrain)
     np.save('Data/PrecomputedMatrices/yTrain', yTrain)      
 
 ############################## CREATE TRAINING SET ##############################
 
-years = range(1993,2019)
+endYear = int(raw_input('What year do you have data until?\n'))
+
+years = range(endYear,endYear + 1)
 # Saves the team vectors for the following years
-saveYears = range(2014,2019)
+saveYears = range(endYear - 4,endYear + 1)
 if os.path.exists("Data/PrecomputedMatrices/xTrain.npy") and os.path.exists("Data/PrecomputedMatrices/yTrain.npy"):
     print ('There is already a precomputed xTrain and yTrain.')
     response = raw_input('Do you want to remove these files and create a new training set? (y/n) ')
