@@ -26,7 +26,7 @@ In order to run these scripts, you'll need the following libraries.
 * Run MarchMadness.py. 
 
 ## What You Can Do
-* Try to modify MarchMadness2018.py to include more ML models
+* Try to modify MarchMadness.py to include more ML models
 * Modify DataPreprocessing.py to create different features to represent each game/team
 * Perform data visualizations to see which features are the most important
 * Decide what type of additional data preprocessing might be needed
