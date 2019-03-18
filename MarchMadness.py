@@ -50,7 +50,7 @@ else:
 	print ('We need a training set! Run dataPreprocessing.py')
 	sys.exit()
 
-curYear = int(raw_input('What year are these predictions for?\n'))
+curYear = int(input('What year are these predictions for?\n'))
 
 ############################## LOAD CSV FILES ##############################
 
