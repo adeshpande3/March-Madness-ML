@@ -89,12 +89,12 @@ if numTrials != 0:
 def predictGame(team_1_vector, team_2_vector, home, modelUsed):
     diff = [a - b for a, b in zip(team_1_vector, team_2_vector)]
     diff.append(home)
-    # Depending on the model you use, you will either need to return model.predict_proba or model.predict
-    # predict_proba = Linear Reg, Linear SVC
-    # predict = Gradient Boosted, Ridge, HuberRegressor
-
-    return modelUsed.predict_proba([diff])[0][1]
-    #return modelUsed.predict([diff])[0]
+    if hasattr(modelUsed, 'predict_proba'):
+	    return modelUsed.predict_proba([diff])[0][1]
+    elif hasattr(modelUsed, 'predict'):
+        return modelUsed.predict([diff])[0]
+    else:
+        raise AttributeError("Model does not have expected prediction method")
 
 ############################## CREATE KAGGLE SUBMISSION ##############################
 
