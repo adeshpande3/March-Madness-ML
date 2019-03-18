@@ -13,14 +13,16 @@ import pandas as pd
 import numpy as np
 import collections
 import os.path
-from sklearn.cross_validation import train_test_split
+from sklearn.model_selection import train_test_split
 from sklearn import svm
 from sklearn.svm import SVC
 from sklearn import linear_model
 from sklearn import tree
-from sklearn.cross_validation import cross_val_score
+from sklearn.model_selection import cross_val_score
 from keras.utils import np_utils
 from sklearn.neighbors import KNeighborsClassifier
+import matplotlib
+matplotlib.use('TkAgg')
 import matplotlib.pyplot as plt
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.ensemble import AdaBoostClassifier
