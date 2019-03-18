@@ -179,9 +179,9 @@ def findWinner(team1, team2, modelUsed):
 trainedModel = trainModel()
 # First round games in the East for example
 findWinner('Duke', 'NC Central', trainedModel)
-findWinner('VCU', 'UCF', trainedModel)
+findWinner('VA Commonwealth', 'UCF', trainedModel)
 findWinner('Mississippi St', 'Liberty', trainedModel)
-findWinner('Virginia Tech', 'Saint Louis', trainedModel)
+findWinner('Virginia Tech', 'St Louis', trainedModel)
 findWinner('Maryland', 'Belmont', trainedModel)
 findWinner('LSU', 'Yale', trainedModel)
 findWinner('Louisville', 'Minnesota', trainedModel)
