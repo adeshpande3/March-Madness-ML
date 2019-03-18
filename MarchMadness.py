@@ -176,13 +176,13 @@ def findWinner(team1, team2, modelUsed):
 	else:
 		print ("Probability that {0} wins: {1}".format(team1, prediction))
 
-#trainedModel = trainModel()
-# First round games in the South for example
-#findWinner('Virginia', 'UMBC', trainedModel)
-#findWinner('Creighton', 'Kansas St', trainedModel)
-#findWinner('Kentucky', 'Davidson', trainedModel)
-#findWinner('Arizona', 'Buffalo', trainedModel)
-#findWinner('Miami FL', 'Loyola-Chicago', trainedModel)
-#findWinner('Tennessee', 'Wright St', trainedModel)
-#findWinner('Nevada', 'Texas', trainedModel)
-#findWinner('Cincinnati', 'Georgia St', trainedModel)
+trainedModel = trainModel()
+# First round games in the East for example
+findWinner('Duke', 'NC Central', trainedModel)
+findWinner('VCU', 'UCF', trainedModel)
+findWinner('Mississippi St', 'Liberty', trainedModel)
+findWinner('Virginia Tech', 'Saint Louis', trainedModel)
+findWinner('Maryland', 'Belmont', trainedModel)
+findWinner('LSU', 'Yale', trainedModel)
+findWinner('Louisville', 'Minnesota', trainedModel)
+findWinner('Michigan St', 'Bradley', trainedModel)

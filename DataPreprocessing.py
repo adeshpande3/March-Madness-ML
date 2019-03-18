@@ -242,6 +242,7 @@ def getSeasonData(team_id, year):
     stats_SOS_pd = handleDifferentCSV(stats_SOS_pd)
     ratings_pd = pd.read_csv('Data/RatingStats/RatingStats_'+str(year)+'.csv')
     ratings_pd = handleDifferentCSV(ratings_pd)
+    year_data_pd = reg_season_compact_pd[reg_season_compact_pd['Season'] == year]
     
     numFeatures = 16
     name = getTeamName(team_id)
@@ -260,8 +261,13 @@ def getSeasonData(team_id, year):
     sos = team['SOS'].values[0]
     srs = team['SRS'].values[0]
     numWins = team['W'].values[0]
-    totalPointsAllowed = team['Opp.'].values[0]
     totalPointsScored = team['Tm.'].values[0]
+
+    totalPointsAllowed = team['Opp.'].values[0]
+    # MM_Stats 1993-1995 don't have these stats so we need to get it from somewhere else
+    if math.isnan(totalPointsAllowed):
+        gamesPlayed = year_data_pd[(year_data_pd.WTeamID == team_id) | (year_data_pd.LTeamID == team_id)] 
+        totalPointsAllowed = gamesPlayed['LScore'].sum()
     
     #Finding tournament seed for that year
     tourneyYear = tourney_seeds_pd[tourney_seeds_pd['Season'] == year]
