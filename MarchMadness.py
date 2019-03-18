@@ -50,6 +50,8 @@ else:
 	print ('We need a training set! Run dataPreprocessing.py')
 	sys.exit()
 
+curYear = int(raw_input('What year are these predictions for?\n'))
+
 ############################## LOAD CSV FILES ##############################
 
 sample_sub_pd = pd.read_csv('Data/KaggleData/SampleSubmissionStage1.csv')
@@ -103,11 +105,11 @@ def loadTeamVectors(years):
 
 def createPrediction(stage2 = False):
 	if stage2:
-		years = [2018]
+		years = [curYear]
 		localPd = sample_sub_pd2
 	else:
 		# The years that we want to predict for
-		years = range(2014,2018)
+		years = range(curYear - 4,curYear)
 		localPd = sample_sub_pd
 
 	if os.path.exists("result.csv"):
@@ -151,7 +153,7 @@ def trainModel():
 	return model
 
 def randomWinner(team1, team2, modelUsed):
-	year = [2018]
+	year = [curYear]
 	teamVectors = loadTeamVectors(year)[0]
 	team1Vector = teamVectors[int(teams_pd[teams_pd['TeamName'] == team1].values[0][0])]
 	team2Vector = teamVectors[int(teams_pd[teams_pd['TeamName'] == team2].values[0][0])]
@@ -164,7 +166,7 @@ def randomWinner(team1, team2, modelUsed):
 
 
 def findWinner(team1, team2, modelUsed):
-	year = [2018]
+	year = [curYear]
 	teamVectors = loadTeamVectors(year)[0]
 	team1Vector = teamVectors[int(teams_pd[teams_pd['TeamName'] == team1].values[0][0])]
 	team2Vector = teamVectors[int(teams_pd[teams_pd['TeamName'] == team2].values[0][0])]
@@ -184,6 +186,3 @@ def findWinner(team1, team2, modelUsed):
 #findWinner('Tennessee', 'Wright St', trainedModel)
 #findWinner('Nevada', 'Texas', trainedModel)
 #findWinner('Cincinnati', 'Georgia St', trainedModel)
-
-teamVectors = loadTeamVectors([2019])
-print teamVectors

@@ -243,11 +243,12 @@ def getSeasonData(team_id, year):
     ratings_pd = pd.read_csv('Data/RatingStats/RatingStats_'+str(year)+'.csv')
     ratings_pd = handleDifferentCSV(ratings_pd)
     
+    numFeatures = 16
     name = getTeamName(team_id)
     team = stats_SOS_pd[stats_SOS_pd['School'] == name]
     team_rating = ratings_pd[ratings_pd['School'] == name]
     if (len(team.index) == 0 or len(team_rating.index) == 0): #Can't find the team
-        return [0 for x in range(16)]
+        return [0 for x in range(numFeatures)]
 
     gamesWon = team['W'].values[0]
     gamesLost = team['L'].values[0]
@@ -363,7 +364,7 @@ def createAndSave(years, saveYears):
 
 endYear = int(raw_input('What year do you have data until?\n'))
 
-years = range(endYear,endYear + 1)
+years = range(1993,endYear + 1)
 # Saves the team vectors for the following years
 saveYears = range(endYear - 4,endYear + 1)
 if os.path.exists("Data/PrecomputedMatrices/xTrain.npy") and os.path.exists("Data/PrecomputedMatrices/yTrain.npy"):
