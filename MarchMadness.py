@@ -13,14 +13,16 @@ import pandas as pd
 import numpy as np
 import collections
 import os.path
-from sklearn.cross_validation import train_test_split
+from sklearn.model_selection import train_test_split
 from sklearn import svm
 from sklearn.svm import SVC
 from sklearn import linear_model
 from sklearn import tree
-from sklearn.cross_validation import cross_val_score
+from sklearn.model_selection import cross_val_score
 from keras.utils import np_utils
 from sklearn.neighbors import KNeighborsClassifier
+import matplotlib
+matplotlib.use('TkAgg')
 import matplotlib.pyplot as plt
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.ensemble import AdaBoostClassifier
@@ -50,7 +52,7 @@ else:
 	print ('We need a training set! Run dataPreprocessing.py')
 	sys.exit()
 
-curYear = int(raw_input('What year are these predictions for?\n'))
+curYear = int(input('What year are these predictions for?\n'))
 
 ############################## LOAD CSV FILES ##############################
 
@@ -87,12 +89,12 @@ if numTrials != 0:
 def predictGame(team_1_vector, team_2_vector, home, modelUsed):
     diff = [a - b for a, b in zip(team_1_vector, team_2_vector)]
     diff.append(home)
-    # Depending on the model you use, you will either need to return model.predict_proba or model.predict
-    # predict_proba = Linear Reg, Linear SVC
-    # predict = Gradient Boosted, Ridge, HuberRegressor
-
-    return modelUsed.predict_proba([diff])[0][1]
-    #return modelUsed.predict([diff])[0]
+    if hasattr(modelUsed, 'predict_proba'):
+	    return modelUsed.predict_proba([diff])[0][1]
+    elif hasattr(modelUsed, 'predict'):
+        return modelUsed.predict([diff])[0]
+    else:
+        raise AttributeError("Model does not have expected prediction method")
 
 ############################## CREATE KAGGLE SUBMISSION ##############################
 

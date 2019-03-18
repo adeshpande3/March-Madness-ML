@@ -1,0 +1,22 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+numpy = "*"
+pandas = "*"
+sklearn = "*"
+keras = "*"
+tensorflow = "*"
+matplotlib = "*"
+xgboost = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.7"
+
+[scripts]
+data-preprocessing = "python DataPreprocessing.py"
+march-madness = "python MarchMadness.py"

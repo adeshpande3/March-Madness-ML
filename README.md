@@ -11,11 +11,9 @@ In this project, I hope to use machine learning to create a model that can predi
 * MarchMadness.py: Script where we apply machine learning models to the training set. We can also create our Kaggle submissions here. 
 
 ## Requirements and Installation
-In order to run these scripts, you'll need the following libraries. 
 
-* [NumPy](https://docs.scipy.org/doc/numpy/user/install.html)
-* [Pandas](https://pandas.pydata.org/pandas-docs/stable/install.html)
-* [Sklearn](http://scikit-learn.org/stable/install.html)
+* python 3
+* [pipenv](https://pipenv.readthedocs.io/en/latest/) for managing virtualenv and pip package dependencies.
 
 ## What To Do Every March
 * Download data files from [Kaggle](https://www.kaggle.com/c/mens-machine-learning-competition-2019), who will normally have a competition going (look for the competition for the current year). They will provide CSV files that show the results from games since 1985, information on conferences, tourney seed history, etc. It's important to download this data every year because Kaggle will add data from the most recently completed season and so you'll have a bit more training data. **Download the files, and replace the ones in [here](https://github.com/adeshpande3/March-Madness-ML/tree/master/Data/KaggleData) with the new versions**
@@ -40,12 +38,16 @@ In order to run these scripts, you'll need the following libraries.
     ```bash
     cd March-Madness-ML
     ```
-3. First create your xTrain and yTrain matrices by running 
+3. Create a virtualenv and install the package dependencies
     ```bash
-    python DataPreprocessing.py
+    pipenv install
+    ```
+4. First create your xTrain and yTrain matrices by running 
+    ```bash
+    pipenv run python DataPreprocessing.py
     ```
    This may take a while (Still trying to figure out ways to make this faster).
-4. Then run your machine learning model  
+5. Then run your machine learning model  
     ```bash
-    python MarchMadness.py
+    pipenv run python MarchMadness.py
     ```
