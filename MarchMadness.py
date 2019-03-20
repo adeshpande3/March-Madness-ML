@@ -200,7 +200,7 @@ randomWinner('Michigan St', 'Bradley', trainedModel)
 
 # First round games in the South for example
 
-findWinner('Virgnia', 'Gardner-Webb', trainedModel)
+findWinner('Virginia', 'Gardner-Webb', trainedModel)
 findWinner('Mississippi', 'Oklahoma', trainedModel)
 findWinner('Wisconsin', 'Oregon', trainedModel)
 findWinner('Kansas St', 'UC Irvine', trainedModel)
