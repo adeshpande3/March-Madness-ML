@@ -52,6 +52,7 @@ else:
 	print ('We need a training set! Run dataPreprocessing.py')
 	sys.exit()
 
+# In case you want to run with Python 2
 try:
     input = raw_input
 except NameError:
@@ -72,7 +73,7 @@ model = GradientBoostingRegressor(n_estimators=100, max_depth=5)
 categories=['Wins','PPG','PPGA','PowerConf','3PG', 'APG','TOP','Conference Champ','Tourney Conference Champ',
            'Seed','SOS','SRS', 'RPG', 'SPG', 'Tourney Appearances','National Championships','Location']
 accuracy=[]
-numTrials = 0
+numTrials = 1
 
 for i in range(numTrials):
     X_train, X_test, Y_train, Y_test = train_test_split(xTrain, yTrain)
@@ -125,7 +126,7 @@ def createPrediction(stage2 = False):
 	print ("Loaded the team vectors")
 	results = [[0 for x in range(2)] for x in range(len(localPd.index))]
 
-	predictionModel = linear_model.LogisticRegression()
+	predictionModel = GradientBoostingRegressor(n_estimators=100, max_depth=5)
 	predictionModel.fit(xTrain, yTrain)
 
 	for index, row in localPd.iterrows():
@@ -150,7 +151,7 @@ def createPrediction(stage2 = False):
 		writer.writerows(results)
 
 #createPrediction()
-#createPrediction(stage2=True)
+createPrediction(stage2=True)
 
 ############################## PREDICTING THIS YEAR'S BRACKET ##############################
 
@@ -165,11 +166,11 @@ def randomWinner(team1, team2, modelUsed, numTrials=10):
 	team1Vector = teamVectors[int(teams_pd[teams_pd['TeamName'] == team1].values[0][0])]
 	team2Vector = teamVectors[int(teams_pd[teams_pd['TeamName'] == team2].values[0][0])]
 	prediction = predictGame(team1Vector, team2Vector, 0, modelUsed)
-  team1Wins = 0
+	team1Wins = 0
 	for i in range(numTrials):
 		if (prediction > random.random()):
 			team1Wins = team1Wins + 1
-    print "{0} Won {1} times".format(team1, team1Wins)
+		print "{0} Won {1} times".format(team1, team1Wins)
 
 
 def findWinner(team1, team2, modelUsed):
@@ -183,6 +184,8 @@ def findWinner(team1, team2, modelUsed):
 	else:
 		print ("Probability that {0} wins: {1}".format(team1, prediction))
 
+
+'''
 trainedModel = trainModel()
 # First round games in the East for example
 
@@ -196,7 +199,7 @@ randomWinner('Louisville', 'Minnesota', trainedModel)
 randomWinner('Michigan St', 'Bradley', trainedModel)
 
 # First round games in the South for example
-'''
+
 findWinner('Virgnia', 'Gardner-Webb', trainedModel)
 findWinner('Mississippi', 'Oklahoma', trainedModel)
 findWinner('Wisconsin', 'Oregon', trainedModel)
