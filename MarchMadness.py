@@ -145,7 +145,7 @@ def createPrediction(stage2 = False):
 	firstRow = [[0 for x in range(2)] for x in range(1)]
 	firstRow[0][0] = 'ID'
 	firstRow[0][1] = 'Pred'
-	with open("result.csv", "wb") as f:
+	with open("result.csv", "w") as f:
 		writer = csv.writer(f)
 		writer.writerows(firstRow)
 		writer.writerows(results)
@@ -170,7 +170,7 @@ def randomWinner(team1, team2, modelUsed, numTrials=10):
 	for i in range(numTrials):
 		if (prediction > random.random()):
 			team1Wins = team1Wins + 1
-		print "{0} Won {1} times".format(team1, team1Wins)
+		print ("{0} Won {1} times".format(team1, team1Wins))
 
 
 def findWinner(team1, team2, modelUsed):
