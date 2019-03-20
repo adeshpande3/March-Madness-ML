@@ -368,6 +368,12 @@ def createAndSave(years, saveYears):
 
 ############################## CREATE TRAINING SET ##############################
 
+# In case you want to run with Python 2
+try:
+    input = raw_input
+except NameError:
+    pass
+
 endYear = int(input('What year do you have data until?\n'))
 
 years = range(1993,endYear + 1)

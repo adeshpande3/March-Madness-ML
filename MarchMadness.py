@@ -52,6 +52,11 @@ else:
 	print ('We need a training set! Run dataPreprocessing.py')
 	sys.exit()
 
+try:
+    input = raw_input
+except NameError:
+    pass
+
 curYear = int(input('What year are these predictions for?\n'))
 
 ############################## LOAD CSV FILES ##############################
@@ -154,17 +159,17 @@ def trainModel():
 	model.fit(xTrain, yTrain)
 	return model
 
-def randomWinner(team1, team2, modelUsed):
+def randomWinner(team1, team2, modelUsed, numTrials=10):
 	year = [curYear]
 	teamVectors = loadTeamVectors(year)[0]
 	team1Vector = teamVectors[int(teams_pd[teams_pd['TeamName'] == team1].values[0][0])]
 	team2Vector = teamVectors[int(teams_pd[teams_pd['TeamName'] == team2].values[0][0])]
 	prediction = predictGame(team1Vector, team2Vector, 0, modelUsed)
-	for i in range(10):
+  team1Wins = 0
+	for i in range(numTrials):
 		if (prediction > random.random()):
-			print ("{0} Wins".format(team1))
-		else:
-			print ("{0} Wins".format(team2))
+			team1Wins = team1Wins + 1
+    print "{0} Won {1} times".format(team1, team1Wins)
 
 
 def findWinner(team1, team2, modelUsed):
@@ -180,11 +185,24 @@ def findWinner(team1, team2, modelUsed):
 
 trainedModel = trainModel()
 # First round games in the East for example
-findWinner('Duke', 'NC Central', trainedModel)
-findWinner('VA Commonwealth', 'UCF', trainedModel)
-findWinner('Mississippi St', 'Liberty', trainedModel)
-findWinner('Virginia Tech', 'St Louis', trainedModel)
-findWinner('Maryland', 'Belmont', trainedModel)
-findWinner('LSU', 'Yale', trainedModel)
-findWinner('Louisville', 'Minnesota', trainedModel)
-findWinner('Michigan St', 'Bradley', trainedModel)
+
+randomWinner('Duke', 'NC Central', trainedModel)
+randomWinner('VA Commonwealth', 'UCF', trainedModel)
+randomWinner('Mississippi St', 'Liberty', trainedModel)
+randomWinner('Virginia Tech', 'St Louis', trainedModel)
+randomWinner('Maryland', 'Belmont', trainedModel)
+randomWinner('LSU', 'Yale', trainedModel)
+randomWinner('Louisville', 'Minnesota', trainedModel)
+randomWinner('Michigan St', 'Bradley', trainedModel)
+
+# First round games in the South for example
+'''
+findWinner('Virgnia', 'Gardner-Webb', trainedModel)
+findWinner('Mississippi', 'Oklahoma', trainedModel)
+findWinner('Wisconsin', 'Oregon', trainedModel)
+findWinner('Kansas St', 'UC Irvine', trainedModel)
+findWinner('Villanova', 'St Mary\'s CA', trainedModel)
+findWinner('Purdue', 'Old Dominion', trainedModel)
+findWinner('Cincinnati', 'Iowa', trainedModel)
+findWinner('Colgate', 'Tennessee', trainedModel)
+'''
