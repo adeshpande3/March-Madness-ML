@@ -51,3 +51,7 @@ In this project, I hope to use machine learning to create a model that can predi
     ```bash
     pipenv run python MarchMadness.py
     ```
+## Troubleshooting
+* If you're using Python 2, then everything should be the same except you don't have to create a pipenv, but you would have to install the following libraries on your own: numpy, pandas, sklearn. Other optional libraries are keras, tensorflow, and xgboost. 
+* If you are using the pipenv with Python 3.7 approach and you want to use Tensorflow, you might run into issues with versioning like [this one](https://github.com/adeshpande3/March-Madness-ML/issues/13). The tl;dr is to use Python 3.6 instead of 3.7.
+* If you are getting errors with any Tensorflow, Keras, or Xgboost installation, keep in mind that those aren't completely necessary for being able to run MarchMadness.py. They are just helpful for if you want to create neural network models (Tensorflow/Keras) or if you want to run Gradient Boosted models (Xgboost). If you are getting errors and you don't really want to use those models, you can go ahead and remove those [import lines](https://github.com/adeshpande3/March-Madness-ML/blob/master/MarchMadness.py#L10-L42). 
